@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { ColorScheme, Header, SvelteBird, User } from '$lib/index.js';
 	import '../tailwind.css';
+	// DEVELOPMENT
+	//import '$lib/tailwind.generated.css'; // PRODUCTION
 </script>
 
 <SvelteBird>
