@@ -1,4 +1,7 @@
 <script lang="ts">
+	import 'simplebar';
+	import 'simplebar/dist/simplebar.css';
+	// or "import SimpleBar from 'simplebar';" if you want to use it manually.
 	import Sidebar from './Sidebar.svelte';
 	import { functionIsRunningOnBrowser } from './functionIsRunningOnBrowser.js';
 	import {
@@ -34,3 +37,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	:global(.simplebar-scrollbar::before) {
+		background-color: darkgrey;
+	}
+</style>

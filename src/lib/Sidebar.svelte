@@ -21,7 +21,8 @@
 		id="sidebar"
 		class:translate-x-0={$storeMobileMenu}
 		class:-translate-x-64={!$storeMobileMenu}
-		class="no-scrollbar lg:classSidebarExpanded:!w-64 absolute left-0 top-0 z-40 flex h-screen w-64 shrink-0 -translate-x-64 flex-col overflow-y-scroll bg-slate-800 p-4 transition-all duration-200 ease-in-out lg:static lg:left-auto lg:top-auto lg:w-20 lg:translate-x-0 lg:overflow-y-auto 2xl:!w-64"
+		class="no-scrollbar lg:classSidebarExpanded:!w-64 absolute left-0 top-0 z-40 flex h-screen w-64 shrink-0 -translate-x-64 flex-col overflow-y-scroll bg-colorDark p-4 transition-all duration-200 ease-in-out lg:static lg:left-auto lg:top-auto lg:w-20 lg:translate-x-0 lg:overflow-y-auto 2xl:!w-64"
+		data-simplebar
 	>
 		<SidebarTop />
 		<div class="space-y-8">
@@ -1068,3 +1069,15 @@
 		<Bottom bind:propSidebarExpanded />
 	</div>
 </div>
+
+<style>
+	/* Chrome, Safari and Opera */
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+</style>

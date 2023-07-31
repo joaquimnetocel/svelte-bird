@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Header, SvelteBird, User, ColorScheme } from '$lib/index.js';
-	import '$lib/utility-patterns.css';
+	import { ColorScheme, Header, SvelteBird, User } from '$lib/index.js';
 	import '../tailwind.css';
 </script>
 

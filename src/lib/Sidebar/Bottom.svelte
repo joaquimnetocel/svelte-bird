@@ -7,7 +7,7 @@
 	}
 </script>
 
-<div class="justify-end hidden pt-3 mt-auto lg:inline-flex 2xl:hidden">
+<div class="justify-end hidden pt-3 mt-auto lg:flex 2xl:hidden">
 	<div class="px-3 py-2">
 		<button on:click={functionClick}>
 			<span class="sr-only">Expand / collapse sidebar</span><svg

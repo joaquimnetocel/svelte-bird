@@ -9,7 +9,13 @@ export default {
 	darkMode: 'class',
 	/////
 	theme: {
-		extend: {},
+		extend: {
+			// ADDED BY ME
+			colors: {
+				colorDark: '#222834',
+			},
+			/////
+		},
 	},
 	plugins: [
 		// ADDED BY ME
