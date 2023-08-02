@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import imageAvatar from './images/logo.png';
-	import type { typeUserMenuArray } from './types/typeUserMenuArray.js';
+	import type { typeUserData } from './types/typeUserData.js';
 
 	export let propButtonText = 'SIGN OUT';
 	export let propButtonLink = '/';
@@ -9,7 +9,7 @@
 	export let propTitle = 'John Smith';
 	export let propInternalTitle = 'John Smith';
 	export let propInternalSubtitle: string | undefined = undefined;
-	export let propUserMenuArray: typeUserMenuArray = [
+	export let propUserMenuArray: typeUserData = [
 		{
 			stringText: 'GITHUB',
 			stringHref: 'https://github.com/joaquimnetocel/svelte-bird',

@@ -1,6 +1,6 @@
-import type { typeUserMenuArray } from '$lib/types/typeUserMenuArray.js';
+import type { typeUserData } from '$lib/index.js';
 
-export const arrayUserMenu: typeUserMenuArray = [
+export const arrayUserData: typeUserData = [
 	{
 		stringText: 'GITHUB',
 		stringTarget: '_blank',

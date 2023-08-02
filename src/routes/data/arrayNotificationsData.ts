@@ -1,4 +1,4 @@
-import type { typeNotificationsData } from '$lib/types/typeNotificationsData.js';
+import type { typeNotificationsData } from '$lib/index.js';
 
 export const arrayNotificationsData: typeNotificationsData = [
 	{

@@ -60,7 +60,7 @@
 								<a
 									class="block px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700/20"
 									href={current.stringHref}
-									target="_blank"
+									target={current.stringTarget}
 								>
 									<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 									{@html current.stringText}
