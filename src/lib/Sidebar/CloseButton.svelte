@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { functionReadMobileMenuStore } from '../../stores/storeMobileMenu.js';
+	import { functionReadMobileMenuStore } from '../stores/storeMobileMenu.js';
 
 	const storeMobileMenu = functionReadMobileMenuStore();
 </script>
 
 <button
-	class="text-slate-500 hover:text-slate-400 lg:hidden"
+	class="ml-auto text-slate-500 hover:text-slate-400 lg:hidden"
 	aria-controls="sidebar"
 	aria-expanded="false"
 	on:click={() => ($storeMobileMenu = !$storeMobileMenu)}
