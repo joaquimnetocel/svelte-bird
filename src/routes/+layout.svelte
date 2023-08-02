@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ColorScheme, SvelteBird, User } from '$lib/index.js';
+	import { DarkModeButton, SvelteBird, User } from '$lib/index.js';
 	import '../tailwind.css';
 	import imageLogo from './imageLogo.webp';
 	// DEVELOPMENT
@@ -371,7 +371,7 @@
 					</div>
 				</div>
 			</div>
-			<ColorScheme />
+			<DarkModeButton />
 			<hr class="w-px h-6 border-none bg-slate-200 dark:bg-slate-700" />
 			<User />
 		</div>

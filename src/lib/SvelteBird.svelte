@@ -1,8 +1,7 @@
 <script lang="ts">
 	import 'simplebar';
 	import 'simplebar/dist/simplebar.css';
-	import HamburgerButton from './Header/HamburgerButton.svelte';
-	// or "import SimpleBar from 'simplebar';" if you want to use it manually.
+	import MobileMenuButton from './MobileMenuButton.svelte';
 	import Sidebar from './Sidebar.svelte';
 	import { functionIsRunningOnBrowser } from './functionIsRunningOnBrowser.js';
 	import {
@@ -37,7 +36,7 @@
 					class="sticky top-0 z-30 border-b border-slate-200 bg-white dark:border-slate-700 dark:bg-[#182235]"
 				>
 					<div class="flex px-4 sm:px-6 lg:px-8">
-						<HamburgerButton />
+						<MobileMenuButton />
 						<div class="flex items-center justify-between flex-grow h-16 -mb-px">
 							<slot name="slotHeader" />
 						</div>

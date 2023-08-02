@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { functionReadMobileMenuStore } from '../stores/storeMobileMenu.js';
+	import { functionReadMobileMenuStore } from './stores/storeMobileMenu.js';
 
 	const storeMobileMenu = functionReadMobileMenuStore();
 </script>

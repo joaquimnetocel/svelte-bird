@@ -7,6 +7,8 @@
 	export let propButtonLink = '/';
 	export let propImage = imageAvatar;
 	export let propTitle = 'John Smith';
+	export let propInternalTitle = 'John Smith';
+	export let propInternalSubtitle: string | undefined = 'Administrator';
 	export let propUserMenuArray: typeUserMenuArray = [
 		{
 			stringText: 'GITHUB',
@@ -51,8 +53,12 @@
 			<div>
 				<div class="mb-1 border-b border-slate-200 px-3 pb-2 pt-0.5 dark:border-slate-700">
 					<slot>
-						<div class="font-medium text-slate-800 dark:text-slate-100">John Smith</div>
-						<div class="text-xs italic text-slate-500 dark:text-slate-400">Administrator</div>
+						<div class="font-medium text-slate-800 dark:text-slate-100">{propInternalTitle}</div>
+						{#if propInternalSubtitle !== undefined}
+							<div class="text-xs italic text-slate-500 dark:text-slate-400">
+								{propInternalSubtitle}
+							</div>
+						{/if}
 					</slot>
 				</div>
 				<ul>
