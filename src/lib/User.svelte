@@ -1,18 +1,18 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
-	import imageAvatar from './User/avatar.png';
-	import type { typeUserMenuArray } from './User/typeUserMenuArray.js';
+	import imageAvatar from './images/logo.png';
+	import type { typeUserMenuArray } from './types/typeUserMenuArray.js';
 
 	export let propButtonText = 'SIGN OUT';
 	export let propButtonLink = '/';
-	export let propImage = imageAvatar;
+	export let propImage: string | undefined = undefined;
 	export let propTitle = 'John Smith';
 	export let propInternalTitle = 'John Smith';
-	export let propInternalSubtitle: string | undefined = 'Administrator';
+	export let propInternalSubtitle: string | undefined = undefined;
 	export let propUserMenuArray: typeUserMenuArray = [
 		{
 			stringText: 'GITHUB',
-			stringHref: 'https://github.com/joaquimnetocel',
+			stringHref: 'https://github.com/joaquimnetocel/svelte-bird',
 			stringTarget: '_blank',
 		},
 		{
@@ -31,7 +31,13 @@
 		aria-haspopup="true"
 		aria-expanded="false"
 	>
-		<img class="w-8 h-8 rounded-full" src={propImage} width="32" height="32" alt="User" />
+		<img
+			class="w-8 h-8 rounded-full"
+			src={propImage ?? imageAvatar}
+			width="32"
+			height="32"
+			alt="User"
+		/>
 		<div class="flex items-center truncate">
 			<span
 				class="ml-2 text-sm font-medium truncate group-hover:text-slate-800 dark:text-slate-300 dark:group-hover:text-slate-200"
@@ -78,7 +84,7 @@
 					<div class="mt-1 border-t border-slate-200 px-3 pt-2 pb-0.5 dark:border-slate-700">
 						<a
 							href={propButtonLink}
-							class="px-3 py-1 font-semibold border rounded bg-zinc-100 text-zinc-700 border-zinc-700 hover:bg-zinc-900 hover:text-white hover:border-transparent"
+							class="block px-3 py-1 font-semibold border rounded whitespace-nowrap bg-zinc-100 text-zinc-700 border-zinc-700 hover:bg-zinc-900 hover:text-white hover:border-transparent"
 						>
 							{propButtonText}
 						</a>

@@ -11,7 +11,7 @@
 				<span>CHECK IT ON</span>
 				<a
 					class="font-medium text-slate-50 hover:underline"
-					href="????"
+					href="https://github.com/joaquimnetocel/svelte-bird"
 					target="_blank"
 					rel="noreferrer"
 				>
