@@ -1,14 +1,13 @@
 <script lang="ts">
-	import { ColorScheme, Header, SvelteBird, User } from '$lib/index.js';
+	import { ColorScheme, SvelteBird, User } from '$lib/index.js';
 	import '../tailwind.css';
 	import imageLogo from './imageLogo.webp';
-
 	// DEVELOPMENT
 	//import '$lib/tailwind.generated.css'; // PRODUCTION
 </script>
 
 <SvelteBird>
-	<Header>
+	<svelte:fragment slot="slotHeader">
 		<a class="flex items-end space-x-2 lg:hidden" href="/">
 			<img src={imageLogo} alt="Logo" width="30" />
 			<div class="hidden text-2xl font-bold md:block bold">SVELTE-BIRD</div>
@@ -376,6 +375,12 @@
 			<hr class="w-px h-6 border-none bg-slate-200 dark:bg-slate-700" />
 			<User />
 		</div>
-	</Header>
+	</svelte:fragment>
 	<slot />
+	<svelte-fragment slot="slotFooter">
+		<div class="flex items-center justify-between h-8">
+			<div>All Rights Reserved ©</div>
+			<div>VERSION 0.0.0</div>
+		</div>
+	</svelte-fragment>
 </SvelteBird>

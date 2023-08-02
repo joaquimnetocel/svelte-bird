@@ -3,7 +3,7 @@
 </script>
 
 {#if stateVisible}
-	<div class="fixed bottom-0 right-0 z-50 w-full md:bottom-8 md:right-12 md:w-auto">
+	<div class="fixed z-50 w-auto bottom-10 right-12">
 		<div
 			class="flex justify-between p-3 text-sm border border-transparent shadow-lg bg-slate-800 text-slate-50 dark:border-slate-700 md:rounded"
 		>
