@@ -4,10 +4,11 @@
 	import Logo from './Sidebar/Logo.svelte';
 	import MenuItemWithSubmenus from './Sidebar/MenuItemWithSubmenus.svelte';
 	import MenuItemWithoutSubmenus from './Sidebar/MenuItemWithoutSubmenus.svelte';
-
 	import { functionReadMobileMenuStore } from './stores/storeMobileMenu.js';
+	import type { typeSidebarData } from './types/typeSidebarData.js';
 
 	export let propSidebarExpanded: boolean;
+	export let propSidebarData: typeSidebarData;
 
 	const storeMobileMenu = functionReadMobileMenuStore();
 </script>
@@ -31,22 +32,41 @@
 			<Logo />
 			<CloseButton />
 		</div>
-		<div class="mb-8">
-			<h3 class="pl-3 text-xs font-semibold uppercase text-slate-500">
-				<span
-					class="hidden w-6 text-center lg:classSidebarExpanded:hidden lg:block 2xl:hidden"
-					aria-hidden="true">•••</span
-				>
-				<span class="lg:classSidebarExpanded:block lg:hidden 2xl:block text-slate-400">
-					PAGES:
-				</span>
-			</h3>
-			<ul class="mt-3">
-				<MenuItemWithSubmenus />
-				<MenuItemWithoutSubmenus />
-			</ul>
+		<div class="space-y-8">
+			{#each propSidebarData as currentSection}
+				<div>
+					{#if currentSection.stringSection !== undefined}
+						<h3 class="pl-3 text-xs font-semibold uppercase text-slate-500">
+							<span
+								class="hidden w-6 text-center lg:classSidebarExpanded:hidden lg:block 2xl:hidden"
+								aria-hidden="true">•••</span
+							>
+							<span class="lg:classSidebarExpanded:block lg:hidden 2xl:block text-slate-400">
+								{currentSection.stringSection}
+							</span>
+						</h3>
+					{/if}
+					<ul class="mt-3">
+						{#each currentSection.arrayMenus as currentMenu}
+							{#if 'stringHref' in currentMenu}
+								<MenuItemWithoutSubmenus
+									propTitle={currentMenu.stringTitle}
+									propHref={currentMenu.stringHref}
+									propIcon={currentMenu.stringIcon}
+								/>
+							{:else}
+								<MenuItemWithSubmenus
+									propTitle={currentMenu.stringTitle}
+									propData={currentMenu.arraySubmenus}
+									propIcon={currentMenu.stringIcon}
+								/>
+							{/if}
+						{/each}
+					</ul>
+				</div>
+			{/each}
 		</div>
-		<div class="mb-8">
+		<!-- <div class="mb-8">
 			<h3 class="pl-3 text-xs font-semibold uppercase text-slate-500">
 				<span
 					class="hidden w-6 text-center lg:classSidebarExpanded:hidden lg:block 2xl:hidden"
@@ -348,7 +368,7 @@
 					</div>
 				</li>
 			</ul>
-		</div>
+		</div> -->
 		<Bottom bind:propSidebarExpanded />
 	</div>
 </div>

@@ -9,6 +9,9 @@
 		functionReadDarkModeStore,
 	} from './stores/storeDarkMode.js';
 	import { functionCreateMobileMenuStore } from './stores/storeMobileMenu.js';
+	import type { typeSidebarData } from './types/typeSidebarData.js';
+
+	export let propSidebarData: typeSidebarData;
 
 	functionCreateMobileMenuStore();
 	functionCreateDarkModeStore();
@@ -30,7 +33,7 @@
 		class="antialiased font-inter bg-slate-100 text-slate-600 dark:bg-slate-900 dark:text-slate-400"
 	>
 		<div class="flex h-screen overflow-hidden">
-			<Sidebar bind:propSidebarExpanded={stateSidebarExpanded} />
+			<Sidebar bind:propSidebarExpanded={stateSidebarExpanded} {propSidebarData} />
 			<div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-hidden">
 				<header
 					class="sticky top-0 z-30 border-b border-slate-200 bg-white dark:border-slate-700 dark:bg-[#182235]"

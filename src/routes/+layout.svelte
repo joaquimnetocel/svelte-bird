@@ -3,6 +3,7 @@
 	import { DarkModeButton, SvelteBird, User } from '$lib/index.js';
 	import '../tailwind.css';
 	import { arrayNotificationsData } from './data/arrayNotificationsData.js';
+	import { arraySidebarData } from './data/arraySidebarData.js';
 	import { arrayUserData } from './data/arrayUserData.js';
 	import { iconNotification } from './icons/iconNotification.js';
 	import imageLogo from './imageLogo.webp';
@@ -10,7 +11,7 @@
 	//import '$lib/tailwind.generated.css'; // PRODUCTION
 </script>
 
-<SvelteBird>
+<SvelteBird propSidebarData={arraySidebarData}>
 	<svelte:fragment slot="slotHeader">
 		<a class="flex items-end space-x-2 lg:hidden" href="/">
 			<img src={imageLogo} alt="Logo" width="30" />
