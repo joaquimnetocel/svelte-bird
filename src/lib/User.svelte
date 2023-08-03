@@ -40,7 +40,7 @@
 		/>
 		<div class="flex items-center truncate">
 			<span
-				class="ml-2 text-sm font-medium truncate group-hover:text-slate-800 dark:text-slate-300 dark:group-hover:text-slate-200"
+				class="ml-2 !md:text-sm font-medium truncate group-hover:text-slate-800 dark:text-slate-300 dark:group-hover:text-slate-200"
 			>
 				{propTitle}
 			</span>
@@ -71,11 +71,12 @@
 					{#each propUserMenuArray as currentUserMenu}
 						<li>
 							<a
-								class="flex items-center px-3 py-1 text-sm font-medium text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400"
+								class="flex items-center px-3 py-1 text-sm font-medium hover:bg-gray-200 dark:hover:text-indigo-400"
 								href={currentUserMenu.stringHref}
 								target={currentUserMenu.stringTarget}
 							>
-								{currentUserMenu.stringText}
+								<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+								{@html currentUserMenu.stringText}
 							</a>
 						</li>
 					{/each}
@@ -84,7 +85,7 @@
 					<div class="mt-1 border-t border-slate-200 px-3 pt-2 pb-0.5 dark:border-slate-700">
 						<a
 							href={propButtonLink}
-							class="block px-3 py-1 font-semibold border rounded whitespace-nowrap bg-zinc-100 text-zinc-700 border-zinc-700 hover:bg-zinc-900 hover:text-white hover:border-transparent"
+							class="block px-3 py-1 font-semibold border rounded whitespace-nowrap bg-zinc-100 text-zinc-700 border-zinc-700 hover:bg-zinc-300 hover:border-transparent"
 						>
 							{propButtonText}
 						</a>
