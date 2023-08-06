@@ -50,15 +50,21 @@
 						{#each currentSection.arrayMenus as currentMenu}
 							{#if 'stringHref' in currentMenu}
 								<MenuItemWithoutSubmenus
+									propMenuName={currentMenu.stringName}
+									propIcon={currentMenu.stringIcon}
 									propTitle={currentMenu.stringTitle}
 									propHref={currentMenu.stringHref}
-									propIcon={currentMenu.stringIcon}
+									propBadge={currentMenu.stringBadge}
+									propActiveMenu="menuApplets"
 								/>
 							{:else}
 								<MenuItemWithSubmenus
 									propTitle={currentMenu.stringTitle}
 									propData={currentMenu.arraySubmenus}
 									propIcon={currentMenu.stringIcon}
+									propMenuName={currentMenu.stringName}
+									propActiveMenu="menuApplets"
+									propExpandedMenu="menuTeaching"
 								/>
 							{/if}
 						{/each}

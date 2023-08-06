@@ -1,16 +1,19 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import type { typeSubmenus } from '../types/typeSidebarData.js';
-	export let propExpanded = false;
-	export let propActive = !false;
 	export let propTitle = 'CLICK HERE';
 	export let propData: typeSubmenus[];
 	export let propIcon: string | undefined = undefined;
+	export let propActiveMenu: string | undefined = undefined;
+	export let propExpandedMenu: string | undefined = undefined;
+	export let propMenuName: string;
+
+	let stateExpanded = propExpandedMenu === propMenuName;
 </script>
 
-<li class:bg-slate-900={propActive} class="mb-0.5 rounded-sm px-3 py-2 last:mb-0">
+<li class:bg-slate-900={stateExpanded} class="mb-0.5 rounded-sm px-3 py-2 last:mb-0">
 	<a
-		on:click={() => (propExpanded = !propExpanded)}
+		on:click={() => (stateExpanded = !stateExpanded)}
 		href="#0"
 		class="block truncate transition duration-150 text-slate-200 hover:text-slate-200"
 	>
@@ -28,7 +31,7 @@
 			</slot>
 			<div class="flex ml-2 shrink-0">
 				<svg
-					class:rotate-90={propExpanded}
+					class:rotate-90={stateExpanded}
 					class="w-3 h-3 ml-1 fill-current false shrink-0 text-slate-400"
 					viewBox="0 0 12 12"
 				>
@@ -37,14 +40,19 @@
 			</div>
 		</div></a
 	>
-	{#if propExpanded}
+	{#if stateExpanded}
 		<div transition:slide class="lg:classSidebarExpanded:block lg:hidden 2xl:block">
-			<ul class="mt-1 false pl-9">
+			<ul class="mt-1 pl-7">
 				{#each propData as currentSubmenu}
 					<li class="mb-1 last:mb-0">
 						<a
+							class:bg-gradient-to-r={currentSubmenu.stringName === propActiveMenu}
+							class:from-[#fcb69f]={currentSubmenu.stringName === propActiveMenu}
+							class:to-[#ffecd2]={currentSubmenu.stringName === propActiveMenu}
+							class:text-black={currentSubmenu.stringName === propActiveMenu}
+							class:text-slate-400={currentSubmenu.stringName !== propActiveMenu}
 							aria-current="page"
-							class="block text-indigo-500 truncate transition duration-150"
+							class="block truncate transition duration-150 rounded-md ps-2"
 							href={currentSubmenu.stringHref}
 							target={currentSubmenu.stringTarget ?? '_self'}
 						>
