@@ -8,27 +8,29 @@ export const arraySidebarData: typeSidebarData = [
 		stringSection: 'PAGES:',
 		arrayMenus: [
 			{
-				stringTitle: 'HOME',
+				stringText: 'HOME',
 				stringHref: '/',
 				stringIcon: iconHome,
 				stringName: 'menuHome',
 			},
 			{
-				stringTitle: 'TEACHING',
+				stringText: 'TEACHING',
 				stringIcon: iconTeaching,
 				arraySubmenus: [
 					{
-						stringTitle: 'COURSES',
-						stringHref: '/',
+						stringText: 'COURSES',
+						stringHref: 'routeCourses',
 						stringName: 'menuCourses',
+						stringBadge: 'NOVO',
 					},
 					{
-						stringTitle: 'APPLETS',
+						stringText: 'APPLETS',
 						stringHref: '/',
 						stringName: 'menuApplets',
+						stringBadge: 'NOVO',
 					},
 					{
-						stringTitle: 'ARTICLES',
+						stringText: 'ARTICLES',
 						stringHref: '/',
 						stringName: 'menuArticles',
 					},
@@ -53,7 +55,7 @@ export const arraySidebarData: typeSidebarData = [
 						/>
 					</svg>
 				`,
-				stringTitle: 'MESSAGES',
+				stringText: 'MESSAGES',
 				stringHref: '/',
 			},
 		],
@@ -63,7 +65,7 @@ export const arraySidebarData: typeSidebarData = [
 		arrayMenus: [
 			{
 				stringName: 'menuGoogle',
-				stringTitle: 'GOOGLE',
+				stringText: 'GOOGLE',
 				stringHref: 'http://www.google.com.br',
 				stringIcon: iconGoogle,
 				stringTarget: '_blank',

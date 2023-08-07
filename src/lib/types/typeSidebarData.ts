@@ -1,21 +1,22 @@
-export type typeSubmenus = {
+export type typeSubmenu = {
 	stringName: string;
-	stringTitle: string;
+	stringText: string;
 	stringHref: string;
 	stringTarget?: '_blank' | '_parent' | '_self' | '_top';
+	stringBadge?: string;
 };
 
-type typeMenuWithSubmenus = {
+export type typeMenuWithSubmenus = {
 	stringName: string;
 	stringIcon: string;
-	stringTitle: string;
-	arraySubmenus: typeSubmenus[];
+	stringText: string;
+	arraySubmenus: typeSubmenu[];
 };
 
 export type typeMenuWithoutSubmenus = {
 	stringName: string;
 	stringIcon: string;
-	stringTitle: string;
+	stringText: string;
 	stringHref: string;
 	stringTarget?: '_blank' | '_parent' | '_self' | '_top';
 	stringBadge?: string;

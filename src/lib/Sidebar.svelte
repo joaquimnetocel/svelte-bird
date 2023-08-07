@@ -49,20 +49,10 @@
 					<ul class="mt-3">
 						{#each currentSection.arrayMenus as currentMenu}
 							{#if 'stringHref' in currentMenu}
-								<MenuItemWithoutSubmenus
-									propMenuName={currentMenu.stringName}
-									propIcon={currentMenu.stringIcon}
-									propTitle={currentMenu.stringTitle}
-									propHref={currentMenu.stringHref}
-									propBadge={currentMenu.stringBadge}
-									propActiveMenu="menuApplets"
-								/>
+								<MenuItemWithoutSubmenus propData={currentMenu} propActiveMenu="menuGoogle" />
 							{:else}
 								<MenuItemWithSubmenus
-									propTitle={currentMenu.stringTitle}
-									propData={currentMenu.arraySubmenus}
-									propIcon={currentMenu.stringIcon}
-									propMenuName={currentMenu.stringName}
+									propData={currentMenu}
 									propActiveMenu="menuApplets"
 									propExpandedMenu="menuTeaching"
 								/>
