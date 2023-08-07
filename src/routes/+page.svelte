@@ -1,5 +1,10 @@
 <script lang="ts">
+	import { functionReadActiveMenuStore } from '$lib/index.js';
 	import Download from './Download.svelte';
+	import type { typeMenuNames } from './data/arraySidebarData.js';
+
+	const storeActiveMenu = functionReadActiveMenuStore<typeMenuNames>();
+	$storeActiveMenu = 'menuHome';
 </script>
 
 <div class="w-full px-4 py-8 mx-auto max-w-9xl sm:px-6 lg:px-8">

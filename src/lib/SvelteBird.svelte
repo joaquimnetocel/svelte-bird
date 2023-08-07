@@ -4,6 +4,7 @@
 	import MobileMenuButton from './MobileMenuButton.svelte';
 	import Sidebar from './Sidebar.svelte';
 	import { functionIsRunningOnBrowser } from './functionIsRunningOnBrowser.js';
+	import { functionCreateActiveMenuStore } from './stores/storeActiveMenu.js';
 	import {
 		functionCreateDarkModeStore,
 		functionReadDarkModeStore,
@@ -15,6 +16,7 @@
 
 	functionCreateMobileMenuStore();
 	functionCreateDarkModeStore();
+	functionCreateActiveMenuStore();
 	const storeDarkMode = functionReadDarkModeStore();
 
 	function functionSidebarExpanded() {

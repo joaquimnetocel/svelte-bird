@@ -3,7 +3,16 @@ import { iconGoogle } from '../icons/iconGoogle.js';
 import { iconHome } from '../icons/iconHome.js';
 import { iconTeaching } from '../icons/iconTeaching.js';
 
-export const arraySidebarData: typeSidebarData = [
+export type typeMenuNames =
+	| 'menuHome'
+	| 'menuTeaching'
+	| 'menuCourses'
+	| 'menuApplets'
+	| 'menuArticles'
+	| 'menuMessages'
+	| 'menuGoogle';
+
+export const arraySidebarData: typeSidebarData<typeMenuNames> = [
 	{
 		stringSection: 'PAGES:',
 		arrayMenus: [

@@ -1,20 +1,20 @@
-export type typeSubmenu = {
-	stringName: string;
+export type typeSubmenu<T> = {
+	stringName: T;
 	stringText: string;
 	stringHref: string;
 	stringTarget?: '_blank' | '_parent' | '_self' | '_top';
 	stringBadge?: string;
 };
 
-export type typeMenuWithSubmenus = {
-	stringName: string;
+export type typeMenuWithSubmenus<T> = {
+	stringName: T;
 	stringIcon: string;
 	stringText: string;
-	arraySubmenus: typeSubmenu[];
+	arraySubmenus: typeSubmenu<T>[];
 };
 
-export type typeMenuWithoutSubmenus = {
-	stringName: string;
+export type typeMenuWithoutSubmenus<T> = {
+	stringName: T;
 	stringIcon: string;
 	stringText: string;
 	stringHref: string;
@@ -22,9 +22,9 @@ export type typeMenuWithoutSubmenus = {
 	stringBadge?: string;
 };
 
-type typeSection = {
+type typeSection<T> = {
 	stringSection?: string;
-	arrayMenus: (typeMenuWithSubmenus | typeMenuWithoutSubmenus)[];
+	arrayMenus: (typeMenuWithSubmenus<T> | typeMenuWithoutSubmenus<T>)[];
 };
 
-export type typeSidebarData = typeSection[];
+export type typeSidebarData<T> = typeSection<T>[];

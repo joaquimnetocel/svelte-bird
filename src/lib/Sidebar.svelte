@@ -4,6 +4,7 @@
 	import Logo from './Sidebar/Logo.svelte';
 	import MenuItemWithSubmenus from './Sidebar/MenuItemWithSubmenus.svelte';
 	import MenuItemWithoutSubmenus from './Sidebar/MenuItemWithoutSubmenus.svelte';
+	import { functionReadActiveMenuStore } from './stores/storeActiveMenu.js';
 	import { functionReadMobileMenuStore } from './stores/storeMobileMenu.js';
 	import type { typeSidebarData } from './types/typeSidebarData.js';
 
@@ -11,6 +12,7 @@
 	export let propSidebarData: typeSidebarData;
 
 	const storeMobileMenu = functionReadMobileMenuStore();
+	const storeActiveMenu = functionReadActiveMenuStore();
 </script>
 
 <div>
@@ -49,11 +51,11 @@
 					<ul class="mt-3">
 						{#each currentSection.arrayMenus as currentMenu}
 							{#if 'stringHref' in currentMenu}
-								<MenuItemWithoutSubmenus propData={currentMenu} propActiveMenu="menuGoogle" />
+								<MenuItemWithoutSubmenus propData={currentMenu} propActiveMenu={$storeActiveMenu} />
 							{:else}
 								<MenuItemWithSubmenus
 									propData={currentMenu}
-									propActiveMenu="menuApplets"
+									propActiveMenu={$storeActiveMenu}
 									propExpandedMenu="menuTeaching"
 								/>
 							{/if}
