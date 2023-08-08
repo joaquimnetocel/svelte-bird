@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
-	import imageAvatar from './images/logo.png';
+	import { functionClickOutside } from './functions/functionClickOutside.js';
+	import imageAvatar from './images/logo.webp';
 	import type { typeUserData } from './types/typeUserData.js';
 
 	export let propButtonText = 'SIGN OUT';
@@ -24,7 +25,7 @@
 	let stateExpanded = false;
 </script>
 
-<div class="relative inline-flex">
+<div use:functionClickOutside={() => (stateExpanded = false)} class="relative inline-flex">
 	<button
 		on:click={() => (stateExpanded = !stateExpanded)}
 		class="inline-flex items-center justify-center group"

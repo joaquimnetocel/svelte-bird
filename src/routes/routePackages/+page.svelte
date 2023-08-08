@@ -4,8 +4,8 @@
 
 	const storeActiveMenu = functionReadActiveMenuStore<typeMenuNames>();
 	const storeExpandedMenu = functionReadExpandedMenuStore<typeMenuNames>();
-	$storeActiveMenu = 'menuCourses';
-	$storeExpandedMenu = 'menuTeaching';
+	$storeActiveMenu = 'menuPackages';
+	$storeExpandedMenu = '';
 </script>
 
-THIS IS THE COURSES ROUTE
+THIS IS THE 'PACKAGES' ROUTE

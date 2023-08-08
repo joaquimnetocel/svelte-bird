@@ -4,11 +4,11 @@ import { writable, type Writable } from 'svelte/store';
 
 const symbolContextKey = Symbol();
 
-export function functionCreateActiveMenuStore() {
+export function functionCreateExpandedMenuStore() {
 	const storeReturn = writable<string>('');
 	setContext(symbolContextKey, storeReturn);
 }
 
-export function functionReadActiveMenuStore<genericT = string>() {
+export function functionReadExpandedMenuStore<genericT = string>() {
 	return getContext<Writable<genericT>>(symbolContextKey);
 }

@@ -3,20 +3,28 @@
 	import 'simplebar/dist/simplebar.css';
 	import MobileMenuButton from './MobileMenuButton.svelte';
 	import Sidebar from './Sidebar.svelte';
-	import { functionIsRunningOnBrowser } from './functionIsRunningOnBrowser.js';
+	import { functionIsRunningOnBrowser } from './functions/functionIsRunningOnBrowser.js';
 	import { functionCreateActiveMenuStore } from './stores/storeActiveMenu.js';
 	import {
 		functionCreateDarkModeStore,
 		functionReadDarkModeStore,
 	} from './stores/storeDarkMode.js';
+	import { functionCreateExpandedMenuStore } from './stores/storeExpandedMenu.js';
 	import { functionCreateMobileMenuStore } from './stores/storeMobileMenu.js';
 	import type { typeSidebarData } from './types/typeSidebarData.js';
 
-	export let propSidebarData: typeSidebarData;
+	export let propSidebarData: typeSidebarData<string>;
+	export let propExpandAllMenus = true;
+	export let propLogoImage: string | undefined = undefined;
+	export let propLogoWidth: number | undefined = undefined;
+	export let propLogoHref: string | undefined = undefined;
+
+	export let propTitle: string | undefined = undefined;
 
 	functionCreateMobileMenuStore();
 	functionCreateDarkModeStore();
 	functionCreateActiveMenuStore();
+	functionCreateExpandedMenuStore();
 	const storeDarkMode = functionReadDarkModeStore();
 
 	function functionSidebarExpanded() {
@@ -35,7 +43,15 @@
 		class="antialiased font-inter bg-slate-100 text-slate-600 dark:bg-slate-900 dark:text-slate-400"
 	>
 		<div class="flex h-screen overflow-hidden">
-			<Sidebar bind:propSidebarExpanded={stateSidebarExpanded} {propSidebarData} />
+			<Sidebar
+				bind:propSidebarExpanded={stateSidebarExpanded}
+				{propSidebarData}
+				{propExpandAllMenus}
+				{propLogoImage}
+				{propLogoWidth}
+				{propTitle}
+				{propLogoHref}
+			/>
 			<div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-hidden">
 				<header
 					class="sticky top-0 z-30 border-b border-slate-200 bg-white dark:border-slate-700 dark:bg-[#182235]"

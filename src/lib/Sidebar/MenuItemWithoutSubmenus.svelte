@@ -2,7 +2,7 @@
 	import type { typeMenuWithoutSubmenus } from '../types/typeSidebarData.js';
 
 	export let propActiveMenu: string | undefined = undefined;
-	export let propData: typeMenuWithoutSubmenus;
+	export let propData: typeMenuWithoutSubmenus<string>;
 </script>
 
 <li

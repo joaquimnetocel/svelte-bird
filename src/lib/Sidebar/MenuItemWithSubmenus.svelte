@@ -1,17 +1,23 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import type { typeMenuWithSubmenus } from '../types/typeSidebarData.js';
-	export let propData: typeMenuWithSubmenus;
+	export let propData: typeMenuWithSubmenus<string>;
 	export let propActiveMenu: string | undefined = undefined;
 	export let propExpandedMenu: string | undefined = undefined;
+	export let propExpandAllMenus: boolean;
 
-	let stateExpanded = propExpandedMenu === propData.stringName;
+	$: stateExpanded = propExpandAllMenus || propExpandedMenu === propData.stringName;
 </script>
 
-<li class:bg-slate-900={stateExpanded} class="mb-0.5 rounded-sm px-3 py-2 last:mb-0">
+<li
+	class:bg-slate-900={propExpandedMenu === propData.stringName}
+	class="mb-0.5 rounded-sm px-3 py-2 last:mb-0"
+>
 	<button
 		type="button"
-		on:click={() => (stateExpanded = !stateExpanded)}
+		on:click={() => {
+			stateExpanded = !stateExpanded;
+		}}
 		class="w-full truncate transition duration-150 text-slate-200 hover:text-slate-200"
 	>
 		<div class="flex items-center justify-between">

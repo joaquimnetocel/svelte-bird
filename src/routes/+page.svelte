@@ -1,13 +1,15 @@
 <script lang="ts">
-	import { functionReadActiveMenuStore } from '$lib/index.js';
+	import { functionReadActiveMenuStore, functionReadExpandedMenuStore } from '$lib/index.js';
 	import Download from './Download.svelte';
 	import type { typeMenuNames } from './data/arraySidebarData.js';
 
 	const storeActiveMenu = functionReadActiveMenuStore<typeMenuNames>();
+	const storeExpandedMenu = functionReadExpandedMenuStore<typeMenuNames>();
 	$storeActiveMenu = 'menuHome';
+	$storeExpandedMenu = '';
 </script>
 
-<div class="w-full px-4 py-8 mx-auto max-w-9xl sm:px-6 lg:px-8">
+<div class="w-full mx-auto max-w-9xl sm:px-6">
 	<div class="relative p-4 mb-8 overflow-hidden bg-indigo-200 rounded-sm dark:bg-indigo-500 sm:p-6">
 		<div
 			class="absolute top-0 right-0 hidden mr-16 -mt-4 pointer-events-none xl:block"

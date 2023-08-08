@@ -1,6 +1,6 @@
 import { getContext, setContext } from 'svelte';
 import { writable, type Writable } from 'svelte/store';
-import { functionIsRunningOnBrowser } from '../functionIsRunningOnBrowser.js';
+import { functionIsRunningOnBrowser } from '../functions/functionIsRunningOnBrowser.js';
 
 const symbolContextKey = Symbol();
 

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
+	import { functionClickOutside } from './functions/functionClickOutside.js';
 	import type { typeNotificationsData } from './types/typeNotificationsData.js';
 
 	export let propNewNotifications = true;
@@ -22,7 +23,7 @@
 	let stateExpanded = false;
 </script>
 
-<div class="relative inline-flex">
+<div use:functionClickOutside={() => (stateExpanded = false)} class="relative inline-flex">
 	<button
 		on:click={() => (stateExpanded = !stateExpanded)}
 		class="flex items-center justify-center w-8 h-8 rounded-full false bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600/80"
