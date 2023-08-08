@@ -1,4 +1,4 @@
-import type { typeUserData } from '$lib/index.js';
+import type { typeUserData } from '$lib/types/index.js';
 import { iconEmail } from '../icons/iconEmail.js';
 import { iconGithub } from '../icons/iconGithub.js';
 import { iconWhatsapp } from '../icons/iconWhatsapp.js';

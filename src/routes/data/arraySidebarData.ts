@@ -1,4 +1,4 @@
-import type { typeSidebarData } from '$lib/index.js';
+import type { typeSidebarData } from '$lib/types/index.js';
 import { iconGoogle } from '../icons/iconGoogle.js';
 import { iconHome } from '../icons/iconHome.js';
 import { iconPackages } from '../icons/iconPackages.js';
