@@ -51,7 +51,7 @@
 	<svelte-fragment slot="slotFooter">
 		<div class="flex items-center justify-between h-8">
 			<div>All Rights Reserved ©</div>
-			<div>VERSION 0.0.4</div>
+			<div>VERSION 0.0.10</div>
 		</div>
 	</svelte-fragment>
 </SvelteBird>
