@@ -1,17 +1,17 @@
 <script lang="ts">
-	import 'simplebar';
-	import 'simplebar/dist/simplebar.css';
-	import MobileMenuButton from './MobileMenuButton.svelte';
-	import Sidebar from './Sidebar.svelte';
-	import { functionIsRunningOnBrowser } from './functions/functionIsRunningOnBrowser.js';
-	import { functionCreateActiveMenuStore } from './stores/storeActiveMenu.js';
+	import MobileMenuButton from '$lib/components/MobileMenuButton.svelte';
+	import Sidebar from '$lib/components/Sidebar.svelte';
+	import { functionIsRunningOnBrowser } from '$lib/functions/functionIsRunningOnBrowser.js';
+	import { functionCreateActiveMenuStore } from '$lib/stores/storeActiveMenu.js';
 	import {
 		functionCreateDarkModeStore,
 		functionReadDarkModeStore,
-	} from './stores/storeDarkMode.js';
-	import { functionCreateExpandedMenuStore } from './stores/storeExpandedMenu.js';
-	import { functionCreateMobileMenuStore } from './stores/storeMobileMenu.js';
-	import type { typeSidebarData } from './types/typeSidebarData.js';
+	} from '$lib/stores/storeDarkMode.js';
+	import { functionCreateExpandedMenuStore } from '$lib/stores/storeExpandedMenu.js';
+	import { functionCreateMobileMenuStore } from '$lib/stores/storeMobileMenu.js';
+	import type { typeSidebarData } from '$lib/types/typeSidebarData.js';
+	import 'simplebar';
+	import 'simplebar/dist/simplebar.css';
 
 	export let propSidebarData: typeSidebarData<string>;
 	export let propExpandAllMenus = true;
@@ -27,13 +27,13 @@
 	functionCreateExpandedMenuStore();
 	const storeDarkMode = functionReadDarkModeStore();
 
+	let stateSidebarExpanded = functionSidebarExpanded();
 	function functionSidebarExpanded() {
 		if (functionIsRunningOnBrowser()) {
 			return localStorage.getItem('storageSidebarExpanded') === 'false' ? false : true;
 		}
 		return true;
 	}
-	let stateSidebarExpanded = functionSidebarExpanded();
 </script>
 
 <div id="idHtml" class:dark={$storeDarkMode} style:color-scheme={$storeDarkMode ? 'dark' : ''}>

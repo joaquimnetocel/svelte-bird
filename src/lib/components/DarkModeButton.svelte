@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { functionReadDarkModeStore } from './stores/storeDarkMode.js';
+	import { functionReadDarkModeStore } from '$lib/stores/storeDarkMode.js';
 
 	const storeDarkMode = functionReadDarkModeStore();
 </script>

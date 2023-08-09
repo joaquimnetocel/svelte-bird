@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { functionClickOutside } from '$lib/functions/functionClickOutside.js';
+	import type { typeNotificationsData } from '$lib/types/typeNotificationsData.js';
 	import { slide } from 'svelte/transition';
-	import { functionClickOutside } from './functions/functionClickOutside.js';
-	import type { typeNotificationsData } from './types/typeNotificationsData.js';
 
 	export let propNewNotifications = true;
 	export let propTitle = 'NOTIFICATIONS:';

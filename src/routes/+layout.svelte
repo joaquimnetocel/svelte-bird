@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { DarkModeButton, Links, Notifications, Search, SvelteBird, User } from '$lib/index.js';
+	import { DarkModeButton, Links, Notifications, Search, User } from '$lib/components/index.js';
+	import { SvelteBird } from '$lib/index.js';
 	import '../tailwind.css';
 	import { arrayNotificationsData } from './data/arrayNotificationsData.js';
 	import { arraySidebarData } from './data/arraySidebarData.js';
@@ -50,7 +51,7 @@
 	<svelte-fragment slot="slotFooter">
 		<div class="flex items-center justify-between h-8">
 			<div>All Rights Reserved ©</div>
-			<div>VERSION 0.0.2</div>
+			<div>VERSION 0.0.4</div>
 		</div>
 	</svelte-fragment>
 </SvelteBird>
