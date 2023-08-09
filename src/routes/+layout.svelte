@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { DarkModeButton, Links, Notifications, Search, User } from '$lib/components/index.js';
 	import { SvelteBird } from '$lib/index.js';
-	import '../tailwind.css';
+	import '../app.css';
+	//import 'svelte-bird/dist/css/svelte-bird.min.css'; // PRODUCTION
 	import { arrayNotificationsData } from './data/arrayNotificationsData.js';
 	import { arraySidebarData } from './data/arraySidebarData.js';
 	import { arrayUserData } from './data/arrayUserData.js';
 	import { iconNotification } from './icons/iconNotification.js';
-	// DEVELOPMENT
-	//import '$lib/tailwind.generated.css'; // PRODUCTION
 </script>
 
 <SvelteBird

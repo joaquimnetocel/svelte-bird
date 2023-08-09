@@ -7,7 +7,7 @@ export default {
 	content: [
 		// ADDED BY ME
 		'./src/**/*.{html,js,svelte,ts}',
-		//'./node_modules/svelte-bird/**/*.{html,js,svelte,ts}',
+		'./node_modules/svelte-bird/**/*.{html,js,svelte,ts}',
 		/////
 	],
 	// ADDED BY ME
