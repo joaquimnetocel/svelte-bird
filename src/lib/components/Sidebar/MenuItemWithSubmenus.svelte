@@ -1,6 +1,7 @@
 <script lang="ts">
+	import type { typeMenuWithSubmenus } from '$lib/types/typeSidebarData.js';
 	import { slide } from 'svelte/transition';
-	import type { typeMenuWithSubmenus } from '../types/typeSidebarData.js';
+
 	export let propData: typeMenuWithSubmenus<string>;
 	export let propActiveMenu: string | undefined = undefined;
 	export let propExpandedMenu: string | undefined = undefined;

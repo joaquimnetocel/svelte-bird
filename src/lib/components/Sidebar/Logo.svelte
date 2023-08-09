@@ -1,5 +1,5 @@
 <script lang="ts">
-	import imageLogo from '../images/logo.webp';
+	import imageLogo from '$lib/images/logo.webp';
 
 	export let propLogo: string | undefined;
 	export let propWidth: number | undefined;

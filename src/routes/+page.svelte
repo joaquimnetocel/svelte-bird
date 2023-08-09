@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { functionReadActiveMenuStore, functionReadExpandedMenuStore } from '$lib/index.js';
+	import { functionReadActiveMenuStore, functionReadExpandedMenuStore } from '$lib/stores/index.js';
 	import Download from './Download.svelte';
 	import type { typeMenuNames } from './data/arraySidebarData.js';
 

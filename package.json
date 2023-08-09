@@ -1,6 +1,6 @@
 {
 	"name": "svelte-bird",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"description": "svelte-bird is a Svelte/Sveltekit admin template.",
 	"repository": {
 		"type": "git",
@@ -37,6 +37,10 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
+		},
+		"./dist/css/*.css": {
+			"import": "./dist/css/*.css",
+			"require": "./dist/css/*.css"
 		}
 	},
 	"files": [

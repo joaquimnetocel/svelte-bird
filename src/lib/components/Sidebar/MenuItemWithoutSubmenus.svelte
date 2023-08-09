@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { typeMenuWithoutSubmenus } from '../types/typeSidebarData.js';
+	import type { typeMenuWithoutSubmenus } from '$lib/types/typeSidebarData.js';
 
 	export let propActiveMenu: string | undefined = undefined;
 	export let propData: typeMenuWithoutSubmenus<string>;

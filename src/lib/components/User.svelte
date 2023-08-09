@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { functionClickOutside } from '$lib/functions/functionClickOutside.js';
+	import imageAvatar from '$lib/images/logo.webp';
+	import type { typeUserData } from '$lib/types/typeUserData.js';
 	import { slide } from 'svelte/transition';
-	import { functionClickOutside } from './functions/functionClickOutside.js';
-	import imageAvatar from './images/logo.webp';
-	import type { typeUserData } from './types/typeUserData.js';
 
 	export let propButtonText = 'SIGN OUT';
 	export let propButtonLink = '/';
@@ -18,7 +18,7 @@
 		},
 		{
 			stringText: 'NPM',
-			stringHref: '????',
+			stringHref: 'https://www.npmjs.com/package/svelte-bird',
 			stringTarget: '_blank',
 		},
 	];

@@ -20,7 +20,7 @@
 				<span class="italic">OR</span>
 				<a
 					class="font-medium text-emerald-400 hover:underline"
-					href="????"
+					href="https://www.npmjs.com/package/svelte-bird"
 					target="_blank"
 					rel="noreferrer"
 				>

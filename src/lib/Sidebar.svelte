@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Bottom from './Sidebar/Bottom.svelte';
-	import CloseButton from './Sidebar/CloseButton.svelte';
-	import Logo from './Sidebar/Logo.svelte';
-	import MenuItemWithSubmenus from './Sidebar/MenuItemWithSubmenus.svelte';
-	import MenuItemWithoutSubmenus from './Sidebar/MenuItemWithoutSubmenus.svelte';
-	import { functionReadActiveMenuStore } from './stores/storeActiveMenu.js';
-	import { functionReadExpandedMenuStore } from './stores/storeExpandedMenu.js';
-	import { functionReadMobileMenuStore } from './stores/storeMobileMenu.js';
-	import type { typeSidebarData } from './types/typeSidebarData.js';
+	import Bottom from '$lib/components/Sidebar/Bottom.svelte';
+	import CloseButton from '$lib/components/Sidebar/CloseButton.svelte';
+	import Logo from '$lib/components/Sidebar/Logo.svelte';
+	import MenuItemWithSubmenus from '$lib/components/Sidebar/MenuItemWithSubmenus.svelte';
+	import MenuItemWithoutSubmenus from '$lib/components/Sidebar/MenuItemWithoutSubmenus.svelte';
+	import { functionReadActiveMenuStore } from '$lib/stores/storeActiveMenu.js';
+	import { functionReadExpandedMenuStore } from '$lib/stores/storeExpandedMenu.js';
+	import { functionReadMobileMenuStore } from '$lib/stores/storeMobileMenu.js';
+	import type { typeSidebarData } from '$lib/types/typeSidebarData.js';
 
 	export let propSidebarExpanded: boolean;
 	export let propSidebarData: typeSidebarData<string>;
