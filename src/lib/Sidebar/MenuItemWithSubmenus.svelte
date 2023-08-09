@@ -76,26 +76,6 @@
 						</a>
 					</li>
 				{/each}
-				<!-- <li class="mb-1 last:mb-0">
-					<a
-						class="block truncate transition duration-150 text-slate-400 hover:text-slate-200"
-						href="/dashboard/analytics"
-						><span
-							class="text-sm font-medium duration-200 lg:classSidebarExpanded:opacity-100 lg:opacity-0 2xl:opacity-100"
-							>Analytics</span
-						></a
-					>
-				</li>
-				<li class="mb-1 last:mb-0">
-					<a
-						class="block truncate transition duration-150 text-slate-400 hover:text-slate-200"
-						href="/dashboard/fintech"
-						><span
-							class="text-sm font-medium duration-200 lg:classSidebarExpanded:opacity-100 lg:opacity-0 2xl:opacity-100"
-							>Fintech</span
-						></a
-					>
-				</li> -->
 			</ul>
 		</div>
 	{/if}
