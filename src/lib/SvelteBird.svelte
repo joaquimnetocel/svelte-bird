@@ -2,6 +2,7 @@
 	import MobileMenuButton from '$lib/components/MobileMenuButton.svelte';
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import { functionIsRunningOnBrowser } from '$lib/functions/functionIsRunningOnBrowser.js';
+	import imageLogo from '$lib/images/logo.webp';
 	import { functionCreateActiveMenuStore } from '$lib/stores/storeActiveMenu.js';
 	import {
 		functionCreateDarkModeStore,
@@ -59,6 +60,12 @@
 					<div class="flex px-4 sm:px-6 lg:px-8">
 						<MobileMenuButton />
 						<div class="flex items-center justify-between flex-grow h-16 -mb-px">
+							<a class="flex items-center space-x-2 lg:hidden" href={propLogoHref ?? '/'}>
+								<img src={propLogoImage ?? imageLogo} alt="Logo" width={propLogoWidth ?? 30} />
+								<div class="hidden text-2xl font-bold md:block bold">
+									{propTitle ?? 'SVELTE-BIRD'}
+								</div>
+							</a>
 							<slot name="slotHeader" />
 						</div>
 					</div>

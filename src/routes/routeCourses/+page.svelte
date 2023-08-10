@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { functionReadActiveMenuStore, functionReadExpandedMenuStore } from '$lib/stores/index.js';
-	import type { typeMenuNames } from '../data/arraySidebarData.js';
+	import type { typeMenuNames } from '../types/typeMenuNames.js';
 
 	const storeActiveMenu = functionReadActiveMenuStore<typeMenuNames>();
 	const storeExpandedMenu = functionReadExpandedMenuStore<typeMenuNames>();

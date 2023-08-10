@@ -1,7 +1,5 @@
 import type { typeUserData } from '$lib/types/index.js';
-import { iconEmail } from '../icons/iconEmail.js';
-import { iconGithub } from '../icons/iconGithub.js';
-import { iconWhatsapp } from '../icons/iconWhatsapp.js';
+import { iconEmail, iconGithub, iconWhatsapp } from '../icons/index.js';
 
 export const arrayUserData: typeUserData = [
 	{

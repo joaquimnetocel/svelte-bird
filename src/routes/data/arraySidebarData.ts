@@ -1,17 +1,7 @@
 import type { typeSidebarData } from '$lib/types/index.js';
-import { iconGoogle } from '../icons/iconGoogle.js';
-import { iconHome } from '../icons/iconHome.js';
-import { iconPackages } from '../icons/iconPackages.js';
-import { iconTeaching } from '../icons/iconTeaching.js';
+import { iconGoogle, iconHome, iconPackages, iconTeaching } from '../icons/index.js';
+import type { typeMenuNames } from '../types/typeMenuNames.js';
 
-export type typeMenuNames =
-	| ''
-	| 'menuHome'
-	| 'menuTeaching'
-	| 'menuCourses'
-	| 'menuArticles'
-	| 'menuPackages'
-	| 'menuGoogle';
 export const arraySidebarData: typeSidebarData<typeMenuNames> = [
 	{
 		stringSection: 'PAGES:',
