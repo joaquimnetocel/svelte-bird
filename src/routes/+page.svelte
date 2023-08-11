@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { functionReadActiveMenuStore, functionReadExpandedMenuStore } from '$lib/stores/index.js';
+	import { functionSetMenuStates } from '$lib/functions/index.js';
 	import Download from './Download.svelte';
-	import type { typeMenuNames } from './data/arraySidebarData.js';
+	import type { typeMenuNames } from './types/typeMenuNames.js';
 
-	const storeActiveMenu = functionReadActiveMenuStore<typeMenuNames>();
-	const storeExpandedMenu = functionReadExpandedMenuStore<typeMenuNames>();
-	$storeActiveMenu = 'menuHome';
-	$storeExpandedMenu = '';
+	functionSetMenuStates<typeMenuNames>({
+		parActiveMenu: 'menuHome',
+		parExpandedMenu: '',
+	});
 </script>
 
 <div class="w-full mx-auto max-w-9xl sm:px-6">

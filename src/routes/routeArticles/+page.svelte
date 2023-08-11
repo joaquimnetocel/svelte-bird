@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { functionReadActiveMenuStore, functionReadExpandedMenuStore } from '$lib/stores/index.js';
+	import { functionSetMenuStates } from '$lib/functions/index.js';
 	import type { typeMenuNames } from '../types/typeMenuNames.js';
 
-	const storeActiveMenu = functionReadActiveMenuStore<typeMenuNames>();
-	const storeExpandedMenu = functionReadExpandedMenuStore<typeMenuNames>();
-	$storeActiveMenu = 'menuArticles';
-	$storeExpandedMenu = 'menuTeaching';
+	functionSetMenuStates<typeMenuNames>({
+		parActiveMenu: 'menuArticles',
+		parExpandedMenu: 'menuTeaching',
+	});
 </script>
 
 THIS IS THE ARTICLES ROUTE
