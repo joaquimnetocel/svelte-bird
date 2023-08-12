@@ -11,8 +11,6 @@
 	import { functionCreateExpandedMenuStore } from '$lib/stores/storeExpandedMenu.js';
 	import { functionCreateMobileMenuStore } from '$lib/stores/storeMobileMenu.js';
 	import type { typeSidebarData } from '$lib/types/typeSidebarData.js';
-	import 'simplebar';
-	import 'simplebar/dist/simplebar.css';
 
 	export let propSidebarData: typeSidebarData<string>;
 	export let propExpandAllMenus = true;
@@ -82,9 +80,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	:global(.simplebar-scrollbar::before) {
-		background-color: darkgrey;
-	}
-</style>

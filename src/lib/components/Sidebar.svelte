@@ -34,9 +34,8 @@
 		id="sidebar"
 		class:translate-x-0={$storeMobileMenu}
 		class:-translate-x-64={!$storeMobileMenu}
-		class="aclassNoScrollbar lg:classSidebarExpanded:!w-64 absolute left-0 top-0 z-40 flex h-screen w-64 shrink-0 -translate-x-64 flex-col overflow-y-scroll bg-colorDark p-4 transition-all duration-200 ease-in-out lg:static lg:left-auto lg:top-auto lg:w-20 lg:translate-x-0 lg:overflow-y-auto 2xl:!w-64"
+		class="classNoScrollbar hover:classScrollbar lg:classSidebarExpanded:!w-64 absolute left-0 top-0 z-40 flex h-screen w-64 shrink-0 -translate-x-64 flex-col overflow-y-scroll bg-colorDark p-4 transition-all duration-200 ease-in-out lg:static lg:left-auto lg:top-auto lg:w-20 lg:translate-x-0 lg:overflow-y-auto 2xl:!w-64"
 	>
-		<!-- data-simplebar -->
 		<div class="flex justify-between pr-3 mb-10 sm:px-2">
 			<Logo
 				propLogo={propLogoImage}
@@ -82,12 +81,25 @@
 </div>
 
 <style>
-	/* .classNoScrollbar::-webkit-scrollbar {
+	::-webkit-scrollbar {
+		width: 20px;
 		display: none;
 	}
 
-	.classNoScrollbar {
-		-ms-overflow-style: none;
-		scrollbar-width: none;
-	} */
+	::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: rgba(80, 80, 80, 0.99);
+		border-radius: 20px;
+		border: 6px solid transparent;
+		background-clip: content-box;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background-color: #a8bbbf;
+	}
+
+	:hover::-webkit-scrollbar {
+		display: inline;
+	}
 </style>
