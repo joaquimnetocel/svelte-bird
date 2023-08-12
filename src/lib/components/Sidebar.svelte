@@ -34,9 +34,9 @@
 		id="sidebar"
 		class:translate-x-0={$storeMobileMenu}
 		class:-translate-x-64={!$storeMobileMenu}
-		class="classNoScrollbar lg:classSidebarExpanded:!w-64 absolute left-0 top-0 z-40 flex h-screen w-64 shrink-0 -translate-x-64 flex-col overflow-y-scroll bg-colorDark p-4 transition-all duration-200 ease-in-out lg:static lg:left-auto lg:top-auto lg:w-20 lg:translate-x-0 lg:overflow-y-auto 2xl:!w-64"
-		data-simplebar
+		class="aclassNoScrollbar lg:classSidebarExpanded:!w-64 absolute left-0 top-0 z-40 flex h-screen w-64 shrink-0 -translate-x-64 flex-col overflow-y-scroll bg-colorDark p-4 transition-all duration-200 ease-in-out lg:static lg:left-auto lg:top-auto lg:w-20 lg:translate-x-0 lg:overflow-y-auto 2xl:!w-64"
 	>
+		<!-- data-simplebar -->
 		<div class="flex justify-between pr-3 mb-10 sm:px-2">
 			<Logo
 				propLogo={propLogoImage}
@@ -82,13 +82,12 @@
 </div>
 
 <style>
-	/* Chrome, Safari and Opera */
-	.classNoScrollbar::-webkit-scrollbar {
+	/* .classNoScrollbar::-webkit-scrollbar {
 		display: none;
 	}
 
 	.classNoScrollbar {
-		-ms-overflow-style: none; /* IE and Edge */
-		scrollbar-width: none; /* Firefox */
-	}
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	} */
 </style>

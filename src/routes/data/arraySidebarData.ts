@@ -51,4 +51,108 @@ export const arraySidebarData: typeSidebarData<typeMenuNames> = [
 			},
 		],
 	},
+	{
+		stringSection: 'LINKS:',
+		arrayMenus: [
+			{
+				stringName: 'menuGoogle',
+				stringText: 'GOOGLE',
+				stringHref: 'http://www.google.com.br',
+				stringIcon: iconGoogle,
+				stringTarget: '_blank',
+				stringBadge: 'NOVO',
+			},
+		],
+	},
+	{
+		stringSection: 'LINKS:',
+		arrayMenus: [
+			{
+				stringName: 'menuGoogle',
+				stringText: 'GOOGLE',
+				stringHref: 'http://www.google.com.br',
+				stringIcon: iconGoogle,
+				stringTarget: '_blank',
+				stringBadge: 'NOVO',
+			},
+		],
+	},
+	{
+		stringSection: 'LINKS:',
+		arrayMenus: [
+			{
+				stringName: 'menuGoogle',
+				stringText: 'GOOGLE',
+				stringHref: 'http://www.google.com.br',
+				stringIcon: iconGoogle,
+				stringTarget: '_blank',
+				stringBadge: 'NOVO',
+			},
+		],
+	},
+	{
+		stringSection: 'LINKS:',
+		arrayMenus: [
+			{
+				stringName: 'menuGoogle',
+				stringText: 'GOOGLE',
+				stringHref: 'http://www.google.com.br',
+				stringIcon: iconGoogle,
+				stringTarget: '_blank',
+				stringBadge: 'NOVO',
+			},
+		],
+	},
+	{
+		stringSection: 'LINKS:',
+		arrayMenus: [
+			{
+				stringName: 'menuGoogle',
+				stringText: 'GOOGLE',
+				stringHref: 'http://www.google.com.br',
+				stringIcon: iconGoogle,
+				stringTarget: '_blank',
+				stringBadge: 'NOVO',
+			},
+		],
+	},
+	{
+		stringSection: 'LINKS:',
+		arrayMenus: [
+			{
+				stringName: 'menuGoogle',
+				stringText: 'GOOGLE',
+				stringHref: 'http://www.google.com.br',
+				stringIcon: iconGoogle,
+				stringTarget: '_blank',
+				stringBadge: 'NOVO',
+			},
+		],
+	},
+	{
+		stringSection: 'LINKS:',
+		arrayMenus: [
+			{
+				stringName: 'menuGoogle',
+				stringText: 'GOOGLE',
+				stringHref: 'http://www.google.com.br',
+				stringIcon: iconGoogle,
+				stringTarget: '_blank',
+				stringBadge: 'NOVO',
+			},
+		],
+	},
+	{
+		stringSection: 'LINKS:',
+		arrayMenus: [
+			{
+				stringName: 'menuGoogle',
+				stringText: 'GOOGLE',
+				stringHref: 'http://www.google.com.br',
+				stringIcon: iconGoogle,
+				stringTarget: '_blank',
+				stringBadge: 'NOVO',
+			},
+		],
+	},
 ];
