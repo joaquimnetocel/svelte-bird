@@ -27,7 +27,7 @@
 				propIcon={iconNotification}
 				propNotFoundMessage={'NO NOTIFICATION FOUND!'}
 			/>
-			<Links />
+			<Links propTitle="CHOOSE YOUR LANGUAGE:" />
 			<DarkModeButton />
 			<hr class="w-px h-6 border-none bg-slate-200 dark:bg-slate-700" />
 			<User

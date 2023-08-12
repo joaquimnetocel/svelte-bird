@@ -5,10 +5,10 @@ export const functionSetMenuStates = function <T>({
 	parExpandedMenu,
 }: {
 	parActiveMenu: T;
-	parExpandedMenu: T;
+	parExpandedMenu?: T;
 }) {
 	const storeActiveMenu = functionReadActiveMenuStore<T>();
-	const storeExpandedMenu = functionReadExpandedMenuStore<T>();
+	const storeExpandedMenu = functionReadExpandedMenuStore<T | ''>();
 	storeActiveMenu.set(parActiveMenu);
-	storeExpandedMenu.set(parExpandedMenu);
+	storeExpandedMenu.set(parExpandedMenu ?? '');
 };

@@ -34,7 +34,7 @@
 		>
 			<div>
 				<div
-					class="px-3 pb-2 pt-1.5 text-xs font-semibold uppercase text-slate-400 dark:text-slate-500"
+					class="whitespace-nowrap px-3 pb-2 pt-1.5 text-xs font-semibold uppercase text-slate-400 dark:text-slate-500"
 				>
 					{propTitle}
 				</div>
