@@ -12,7 +12,7 @@
 	class:to-[#ffecd2]={propActiveMenu === propData.stringName}
 >
 	<a
-		class="block truncate transition duration-150"
+		class="block transition duration-150"
 		href={propData.stringHref}
 		class:text-slate-200={propActiveMenu !== propData.stringName}
 		class:text-black={propActiveMenu === propData.stringName}
@@ -22,11 +22,11 @@
 			<div class="flex items-center">
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 				{@html propData.stringIcon ?? ''}
-				<span
+				<div
 					class="ml-2 text-sm font-medium duration-200 lg:classSidebarExpanded:opacity-100 lg:opacity-0 2xl:opacity-100"
 				>
 					{propData.stringText}
-				</span>
+				</div>
 			</div>
 			{#if propData.stringBadge !== undefined}
 				<div class="flex ml-2">

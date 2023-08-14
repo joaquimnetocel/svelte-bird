@@ -12,14 +12,14 @@
 
 <li
 	class:bg-slate-900={propExpandedMenu === propData.stringName}
-	class="mb-0.5 rounded-sm px-3 py-2 last:mb-0"
+	class="px-3 py-2 mb-0.5 rounded-sm last:mb-0"
 >
 	<button
 		type="button"
 		on:click={() => {
 			stateExpanded = !stateExpanded;
 		}}
-		class="w-full truncate transition duration-150 text-slate-200 hover:text-slate-200"
+		class="flex w-full duration-150 items-centertransition text-slate-200 hover:text-slate-200"
 	>
 		<div class="flex items-center justify-between">
 			<div class="flex items-center">
@@ -59,7 +59,7 @@
 							target={currentSubmenu.stringTarget}
 						>
 							<div
-								class="flex items-center justify-between h-6 text-sm font-medium duration-200 lg:classSidebarExpanded:opacity-100 lg:opacity-0 2xl:opacity-100"
+								class="flex items-center justify-between py-1 text-sm font-medium whitespace-normal duration-200 lg:classSidebarExpanded:opacity-100 lg:opacity-0 2xl:opacity-100"
 							>
 								{currentSubmenu.stringText}
 								{#if currentSubmenu.stringBadge !== undefined}
