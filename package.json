@@ -1,6 +1,6 @@
 {
 	"name": "svelte-bird",
-	"version": "0.0.14",
+	"version": "0.0.15",
 	"description": "svelte-bird is a Svelte/Sveltekit admin template.",
 	"repository": {
 		"type": "git",
