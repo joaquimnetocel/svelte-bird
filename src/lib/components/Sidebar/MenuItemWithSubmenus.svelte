@@ -21,7 +21,7 @@
 		}}
 		class="flex w-full duration-150 items-centertransition text-slate-200 hover:text-slate-200"
 	>
-		<div class="flex items-center justify-between">
+		<div class="flex items-center justify-between flex-grow">
 			<div class="flex items-center">
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 				{@html propData.stringIcon ?? ''}
