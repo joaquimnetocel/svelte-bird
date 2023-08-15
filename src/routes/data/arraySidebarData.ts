@@ -36,12 +36,6 @@ export const arraySidebarData: typeSidebarData<typeMenuNames> = [
 				stringText: 'PACKAGES',
 				stringHref: '/routePackages',
 			},
-			{
-				stringName: 'menuPackages',
-				stringIcon: iconPackages,
-				stringText: 'PACKAGES',
-				stringHref: '/routePackages',
-			},
 		],
 	},
 	{

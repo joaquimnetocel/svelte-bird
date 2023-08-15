@@ -1,8 +1,11 @@
 <script lang="ts">
 	import type { typeMenuWithoutSubmenus } from '$lib/types/typeSidebarData.js';
+	import { functionReadMobileMenuStore } from '../../stores/storeMobileMenu.js';
 
 	export let propActiveMenu: string | undefined = undefined;
 	export let propData: typeMenuWithoutSubmenus<string>;
+
+	const storeMobileMenu = functionReadMobileMenuStore();
 </script>
 
 <li
@@ -17,6 +20,7 @@
 		class:text-slate-200={propActiveMenu !== propData.stringName}
 		class:text-black={propActiveMenu === propData.stringName}
 		target={propData.stringTarget}
+		on:click={() => ($storeMobileMenu = false)}
 	>
 		<div class="flex items-center justify-between">
 			<div class="flex items-center">

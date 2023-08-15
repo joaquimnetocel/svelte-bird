@@ -1,11 +1,14 @@
 <script lang="ts">
 	import type { typeMenuWithSubmenus } from '$lib/types/typeSidebarData.js';
 	import { slide } from 'svelte/transition';
+	import { functionReadMobileMenuStore } from '../../stores/storeMobileMenu.js';
 
 	export let propData: typeMenuWithSubmenus<string>;
 	export let propActiveMenu: string | undefined = undefined;
 	export let propExpandedMenu: string | undefined = undefined;
 	export let propExpandAllMenus: boolean;
+
+	const storeMobileMenu = functionReadMobileMenuStore();
 
 	$: stateExpanded = propExpandAllMenus || propExpandedMenu === propData.stringName;
 </script>
@@ -48,6 +51,7 @@
 				{#each propData.arraySubmenus as currentSubmenu}
 					<li class="mb-1 last:mb-0">
 						<a
+							on:click={() => ($storeMobileMenu = false)}
 							class:bg-gradient-to-r={currentSubmenu.stringName === propActiveMenu}
 							class:from-[#fcb69f]={currentSubmenu.stringName === propActiveMenu}
 							class:to-[#ffecd2]={currentSubmenu.stringName === propActiveMenu}

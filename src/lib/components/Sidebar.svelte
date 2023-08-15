@@ -4,6 +4,7 @@
 	import Logo from '$lib/components/Sidebar/Logo.svelte';
 	import MenuItemWithSubmenus from '$lib/components/Sidebar/MenuItemWithSubmenus.svelte';
 	import MenuItemWithoutSubmenus from '$lib/components/Sidebar/MenuItemWithoutSubmenus.svelte';
+	import { functionClickOutside } from '$lib/functions/functionClickOutside.js';
 	import { functionReadActiveMenuStore } from '$lib/stores/storeActiveMenu.js';
 	import { functionReadExpandedMenuStore } from '$lib/stores/storeExpandedMenu.js';
 	import { functionReadMobileMenuStore } from '$lib/stores/storeMobileMenu.js';
@@ -22,7 +23,7 @@
 	const storeExpandedMenu = functionReadExpandedMenuStore();
 </script>
 
-<div>
+<div use:functionClickOutside={() => ($storeMobileMenu = false)}>
 	<!-- Sidebar backdrop (mobile only) -->
 	<div
 		class="fixed inset-0 z-40 transition-opacity duration-200 opacity-0 pointer-events-none bg-slate-900 bg-opacity-30 lg:z-auto lg:hidden"
