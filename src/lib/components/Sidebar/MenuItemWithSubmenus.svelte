@@ -1,14 +1,19 @@
 <script lang="ts">
 	import type { typeMenuWithSubmenus } from '$lib/types/typeSidebarData.js';
 	import { slide } from 'svelte/transition';
+	import { functionReadActiveMenuStore } from '../../stores/storeActiveMenu.js';
+	import { functionReadExpandedMenuStore } from '../../stores/storeExpandedMenu.js';
 	import { functionReadMobileMenuStore } from '../../stores/storeMobileMenu.js';
 
 	export let propData: typeMenuWithSubmenus<string>;
 	export let propActiveMenu: string | undefined = undefined;
 	export let propExpandedMenu: string | undefined = undefined;
 	export let propExpandAllMenus: boolean;
+	export let propSidebarExpanded: boolean;
 
 	const storeMobileMenu = functionReadMobileMenuStore();
+	const storeActiveMenu = functionReadActiveMenuStore();
+	const storeExpandedMenu = functionReadExpandedMenuStore();
 
 	$: stateExpanded = propExpandAllMenus || propExpandedMenu === propData.stringName;
 </script>
@@ -21,6 +26,7 @@
 		type="button"
 		on:click={() => {
 			stateExpanded = !stateExpanded;
+			propSidebarExpanded = true;
 		}}
 		class="flex w-full duration-150 items-centertransition text-slate-200 hover:text-slate-200"
 	>
@@ -51,7 +57,11 @@
 				{#each propData.arraySubmenus as currentSubmenu}
 					<li class="mb-1 last:mb-0">
 						<a
-							on:click={() => ($storeMobileMenu = false)}
+							on:click={() => {
+								$storeMobileMenu = false;
+								$storeActiveMenu = currentSubmenu.stringName;
+								$storeExpandedMenu = propData.stringName;
+							}}
 							class:bg-gradient-to-r={currentSubmenu.stringName === propActiveMenu}
 							class:from-[#fcb69f]={currentSubmenu.stringName === propActiveMenu}
 							class:to-[#ffecd2]={currentSubmenu.stringName === propActiveMenu}

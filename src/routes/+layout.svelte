@@ -41,12 +41,18 @@
 		</div>
 	</svelte:fragment>
 	<div class="px-4 py-4">
+		<!-- <div class="h-auto min-h-full"> -->
+		<!-- <div
+				class="h-auto min-h-full px-4 py-4 dark:bg-[url('/images/backgrounds/header.png')] bg-[url('/images/backgrounds/clear.jpg')] bg-no-repeat bg-cover bg-center bg-fixed"
+				> -->
 		<slot />
+		<!-- </div> -->
+		<!-- </div> -->
 	</div>
 	<svelte-fragment slot="slotFooter">
 		<div class="flex items-center justify-between h-8">
 			<div>All Rights Reserved ©</div>
-			<div>VERSION 0.0.18</div>
+			<div>VERSION 0.0.19</div>
 		</div>
 	</svelte-fragment>
 </SvelteBird>

@@ -71,6 +71,7 @@
 									propActiveMenu={$storeActiveMenu}
 									propExpandedMenu={$storeExpandedMenu}
 									{propExpandAllMenus}
+									bind:propSidebarExpanded
 								/>
 							{/if}
 						{/each}
