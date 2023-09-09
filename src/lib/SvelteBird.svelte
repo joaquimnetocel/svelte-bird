@@ -68,7 +68,7 @@
 						</div>
 					</div>
 				</header>
-				<main class="flex-grow overflow-y-auto">
+				<main class="flex flex-col flex-grow overflow-y-auto">
 					<slot />
 				</main>
 				<footer
