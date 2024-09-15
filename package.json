@@ -1,6 +1,26 @@
 {
 	"name": "svelte-bird",
-	"version": "0.0.1",
+	"version": "1.0.0",
+	"description": "svelte-bird is a Svelte/Sveltekit admin template.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/joaquimnetocel/svelte-bird"
+	},
+	"bugs": {
+		"url": "https://github.com/joaquimnetocel/svelte-bird/issues"
+	},
+	"keywords": [
+		"admin",
+		"admin-template",
+		"svelte",
+		"sveltejs",
+		"sveltekit",
+		"template",
+		"tailwind",
+		"tailwindcss"
+	],
+	"author": "Joaquim Henriques <joaquim.neto.cel@gmail.com>",
+	"license": "ISC",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
