@@ -1,5 +1,5 @@
-import { browser } from '$app/environment';
 import type { typeContext } from '$lib/types/typeContext.js';
+import { BROWSER } from 'esm-env';
 
 import { setContext } from 'svelte';
 
@@ -9,7 +9,7 @@ export function functionCreatePersistentStore<genericT>(
 ) {
 	const state = $state({ value: parInitialValue });
 
-	if (browser) {
+	if (BROWSER) {
 		const stringBrowserValue = localStorage.getItem(parContext);
 		if (stringBrowserValue !== null) {
 			state.value = JSON.parse(stringBrowserValue);
