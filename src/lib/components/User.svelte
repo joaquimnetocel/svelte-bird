@@ -5,12 +5,13 @@
 	import imageAvatar from '$lib/images/logo.webp';
 	import type { typeUserData } from '$lib/types/typeUserData.js';
 	import type { Snippet } from 'svelte';
+	import type { MouseEventHandler } from 'svelte/elements';
 	import { slide } from 'svelte/transition';
 
 	let {
 		children,
 		propButtonText = 'SIGN OUT',
-		propButtonLink = '/',
+		onClick,
 		propImage,
 		propTitle = 'John Smith',
 		propInternalTitle = 'John Smith',
@@ -28,6 +29,7 @@
 			},
 		],
 	}: {
+		onClick?: MouseEventHandler<HTMLButtonElement>;
 		propButtonText?: string;
 		propButtonLink?: string;
 		propImage?: string;
@@ -44,12 +46,12 @@
 <div use:functionClickOutside={() => (stateExpanded = false)} class="relative inline-flex">
 	<button
 		onclick={() => (stateExpanded = !stateExpanded)}
-		class="inline-flex items-center justify-center group"
+		class="group inline-flex items-center justify-center"
 		aria-haspopup="true"
 		aria-expanded="false"
 	>
 		<img
-			class="w-8 h-8 rounded-full"
+			class="h-8 w-8 rounded-full"
 			src={propImage ?? imageAvatar}
 			width="32"
 			height="32"
@@ -57,11 +59,11 @@
 		/>
 		<div class="flex items-center truncate">
 			<span
-				class="ml-2 !md:text-sm font-medium truncate group-hover:text-slate-800 dark:text-slate-300 dark:group-hover:text-slate-200"
+				class="ml-2 truncate font-medium group-hover:text-slate-800 dark:text-slate-300 dark:group-hover:text-slate-200 !md:text-sm"
 			>
 				{propTitle}
 			</span>
-			<svg class="w-3 h-3 ml-1 fill-current shrink-0 text-slate-400" viewBox="0 0 12 12">
+			<svg class="ml-1 h-3 w-3 shrink-0 fill-current text-slate-400" viewBox="0 0 12 12">
 				<path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
 			</svg>
 		</div>
@@ -69,7 +71,7 @@
 	{#if stateExpanded}
 		<div
 			transition:slide
-			class="min-w-44 absolute right-0 top-full z-10 mt-1 origin-top-right overflow-hidden rounded border border-slate-200 bg-white py-1.5 shadow-lg dark:border-slate-700 dark:bg-slate-800"
+			class="absolute right-0 top-full z-10 mt-1 min-w-44 origin-top-right overflow-hidden rounded border border-slate-200 bg-white py-1.5 shadow-lg dark:border-slate-700 dark:bg-slate-800"
 			class:enter-done={stateExpanded}
 			class:exit-done={!stateExpanded}
 		>
@@ -100,14 +102,23 @@
 						</li>
 					{/each}
 				</ul>
+
 				{#if propButtonText !== ''}
-					<div class="mt-1 border-t border-slate-200 px-3 pt-2 pb-0.5 dark:border-slate-700">
-						<a
-							href={propButtonLink}
-							class="block px-3 py-1 font-semibold text-center border rounded whitespace-nowrap bg-zinc-100 text-zinc-700 border-zinc-700 hover:bg-zinc-300 hover:border-transparent"
+					<div
+						class:border-t={propUserMenuArray.length > 0}
+						class="mt-1 flex justify-center border-slate-200 px-3 pb-0.5 pt-2 dark:border-slate-700"
+					>
+						<button
+							onclick={(event) => {
+								stateExpanded = !stateExpanded;
+								if (onClick) {
+									onClick(event);
+								}
+							}}
+							class="block whitespace-nowrap rounded border border-zinc-700 bg-zinc-100 px-3 py-1 text-center font-semibold text-zinc-700 hover:border-transparent hover:bg-zinc-300"
 						>
 							{propButtonText}
-						</a>
+						</button>
 					</div>
 				{/if}
 			</div>

@@ -34,7 +34,7 @@
 <div use:functionClickOutside={() => (storeMobileMenu.value = false)}>
 	<!-- Sidebar backdrop (mobile only) -->
 	<div
-		class="fixed inset-0 z-40 transition-opacity duration-200 opacity-0 pointer-events-none bg-slate-900 bg-opacity-30 lg:z-auto lg:hidden"
+		class="pointer-events-none fixed inset-0 z-40 bg-slate-900 bg-opacity-30 opacity-0 transition-opacity duration-200 lg:z-auto lg:hidden"
 		aria-hidden="true"
 	></div>
 	<!---->
@@ -44,9 +44,9 @@
 		class:-translate-x-64={!storeMobileMenu.value}
 		class:classContractedScrollWidth={!propSidebarExpanded}
 		class:classExpandedScrollWidth={propSidebarExpanded}
-		class="lg:classSidebarExpanded:!w-64 absolute left-0 top-0 z-40 flex h-screen w-64 shrink-0 -translate-x-64 flex-col overflow-y-auto overflow-x-hidden bg-colorDark p-4 transition-all duration-200 ease-in-out lg:static lg:left-auto lg:top-auto lg:w-20 lg:translate-x-0 2xl:!w-64"
+		class="absolute left-0 top-0 z-40 flex h-screen w-64 shrink-0 -translate-x-64 flex-col overflow-y-auto overflow-x-hidden bg-colorDark p-4 transition-all duration-200 ease-in-out lg:static lg:left-auto lg:top-auto lg:w-20 lg:translate-x-0 lg:classSidebarExpanded:!w-64 2xl:!w-64"
 	>
-		<div class="flex justify-between pr-3 mb-10 sm:px-2">
+		<div class="mb-10 flex justify-between pr-3 sm:px-2">
 			<Logo
 				propLogo={propLogoImage}
 				propWidth={propLogoWidth}
@@ -61,10 +61,10 @@
 					{#if currentSection.stringSection !== undefined}
 						<h3 class="pl-3 text-xs font-semibold uppercase text-slate-500">
 							<span
-								class="hidden w-6 text-center lg:classSidebarExpanded:hidden lg:block 2xl:hidden"
+								class="hidden w-6 text-center lg:block lg:classSidebarExpanded:hidden 2xl:hidden"
 								aria-hidden="true">•••</span
 							>
-							<span class="lg:classSidebarExpanded:block lg:hidden 2xl:block text-slate-400">
+							<span class="text-slate-400 lg:hidden lg:classSidebarExpanded:block 2xl:block">
 								{currentSection.stringSection}
 							</span>
 						</h3>

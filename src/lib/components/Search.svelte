@@ -11,7 +11,7 @@
 <div>
 	<button
 		onclick={() => (stateVisible = !stateVisible)}
-		class="flex items-center justify-center w-8 h-8 ml-3 rounded-full false bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600/80"
+		class="false ml-3 flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600/80"
 		aria-controls="search-modal"
 	>
 		<!--<span class="sr-only">Search</span>-->
@@ -21,31 +21,31 @@
 
 	<div
 		class:hidden={!stateVisible}
-		class="fixed inset-0 z-50 transition-opacity bg-slate-900 bg-opacity-30"
+		class="fixed inset-0 z-50 bg-slate-900 bg-opacity-30 transition-opacity"
 		aria-hidden="true"
 	></div>
 	{#if stateVisible}
 		<div
 			transition:slide
 			id="search-modal"
-			class="fixed inset-0 z-50 flex items-start justify-center px-4 mb-4 overflow-hidden top-20 sm:px-6"
+			class="fixed inset-0 top-20 z-50 mb-4 flex items-start justify-center overflow-hidden px-4 sm:px-6"
 			role="dialog"
 			aria-modal="true"
 		>
 			<div
 				use:functionClickOutside={() => (stateVisible = false)}
-				class="w-full max-w-2xl max-h-full overflow-auto bg-white border border-transparent rounded shadow-lg dark:border-slate-700 dark:bg-slate-800"
+				class="max-h-full w-full max-w-2xl overflow-auto rounded border border-transparent bg-white shadow-lg dark:border-slate-700 dark:bg-slate-800"
 			>
 				<form class="border-b border-slate-200 dark:border-slate-700">
 					<div class="relative">
 						<label for="search" class="sr-only">Search</label><input
 							id="search"
-							class="w-full py-3 pl-10 pr-4 bg-white border-0 appearance-none placeholder-slate-400 focus:ring-transparent dark:bg-slate-800 dark:text-slate-300 dark:placeholder-slate-500"
+							class="w-full appearance-none border-0 bg-white py-3 pl-10 pr-4 placeholder-slate-400 focus:ring-transparent dark:bg-slate-800 dark:text-slate-300 dark:placeholder-slate-500"
 							type="search"
 							placeholder="Search Anything…"
-						/><button class="absolute inset-0 right-auto group" type="submit" aria-label="Search">
+						/><button class="group absolute inset-0 right-auto" type="submit" aria-label="Search">
 							<svg
-								class="w-4 h-4 ml-4 mr-2 fill-current shrink-0 text-slate-400 group-hover:text-slate-500 dark:text-slate-500 dark:group-hover:text-slate-400"
+								class="ml-4 mr-2 h-4 w-4 shrink-0 fill-current text-slate-400 group-hover:text-slate-500 dark:text-slate-500 dark:group-hover:text-slate-400"
 								viewBox="0 0 16 16"
 								xmlns="http://www.w3.org/2000/svg"
 							>
@@ -62,17 +62,17 @@
 				<div class="px-2 py-4">
 					<div class="mb-3 last:mb-0">
 						<div
-							class="px-2 mb-2 text-xs font-semibold uppercase text-slate-400 dark:text-slate-500"
+							class="mb-2 px-2 text-xs font-semibold uppercase text-slate-400 dark:text-slate-500"
 						>
 							Recent searches
 						</div>
 						<ul class="text-sm">
 							<li>
 								<a
-									class="flex items-center p-2 rounded group text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
+									class="group flex items-center rounded p-2 text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
 									href="/#0"
 									><svg
-										class="w-4 h-4 mr-3 fill-current shrink-0 text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
+										class="mr-3 h-4 w-4 shrink-0 fill-current text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
 										viewBox="0 0 16 16"
 									>
 										<path
@@ -83,10 +83,10 @@
 							</li>
 							<li>
 								<a
-									class="flex items-center p-2 rounded group text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
+									class="group flex items-center rounded p-2 text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
 									href="/#0"
 									><svg
-										class="w-4 h-4 mr-3 fill-current shrink-0 text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
+										class="mr-3 h-4 w-4 shrink-0 fill-current text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
 										viewBox="0 0 16 16"
 									>
 										<path
@@ -97,10 +97,10 @@
 							</li>
 							<li>
 								<a
-									class="flex items-center p-2 rounded group text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
+									class="group flex items-center rounded p-2 text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
 									href="/#0"
 									><svg
-										class="w-4 h-4 mr-3 fill-current shrink-0 text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
+										class="mr-3 h-4 w-4 shrink-0 fill-current text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
 										viewBox="0 0 16 16"
 									>
 										<path
@@ -111,10 +111,10 @@
 							</li>
 							<li>
 								<a
-									class="flex items-center p-2 rounded group text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
+									class="group flex items-center rounded p-2 text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
 									href="/#0"
 									><svg
-										class="w-4 h-4 mr-3 fill-current shrink-0 text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
+										class="mr-3 h-4 w-4 shrink-0 fill-current text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
 										viewBox="0 0 16 16"
 									>
 										<path
@@ -125,10 +125,10 @@
 							</li>
 							<li>
 								<a
-									class="flex items-center p-2 rounded group text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
+									class="group flex items-center rounded p-2 text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
 									href="/#0"
 									><svg
-										class="w-4 h-4 mr-3 fill-current shrink-0 text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
+										class="mr-3 h-4 w-4 shrink-0 fill-current text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
 										viewBox="0 0 16 16"
 									>
 										<path
@@ -139,10 +139,10 @@
 							</li>
 							<li>
 								<a
-									class="flex items-center p-2 rounded group text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
+									class="group flex items-center rounded p-2 text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
 									href="/#0"
 									><svg
-										class="w-4 h-4 mr-3 fill-current shrink-0 text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
+										class="mr-3 h-4 w-4 shrink-0 fill-current text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
 										viewBox="0 0 16 16"
 									>
 										<path
@@ -155,17 +155,17 @@
 					</div>
 					<div class="mb-3 last:mb-0">
 						<div
-							class="px-2 mb-2 text-xs font-semibold uppercase text-slate-400 dark:text-slate-500"
+							class="mb-2 px-2 text-xs font-semibold uppercase text-slate-400 dark:text-slate-500"
 						>
 							Recent pages
 						</div>
 						<ul class="text-sm">
 							<li>
 								<a
-									class="flex items-center p-2 rounded group text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
+									class="group flex items-center rounded p-2 text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
 									href="/#0"
 									><svg
-										class="w-4 h-4 mr-3 fill-current shrink-0 text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
+										class="mr-3 h-4 w-4 shrink-0 fill-current text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
 										viewBox="0 0 16 16"
 									>
 										<path
@@ -181,10 +181,10 @@
 							</li>
 							<li>
 								<a
-									class="flex items-center p-2 rounded group text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
+									class="group flex items-center rounded p-2 text-slate-800 hover:bg-indigo-500 hover:text-white dark:text-slate-100"
 									href="/#0"
 									><svg
-										class="w-4 h-4 mr-3 fill-current shrink-0 text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
+										class="mr-3 h-4 w-4 shrink-0 fill-current text-slate-400 group-hover:text-white group-hover:text-opacity-50 dark:text-slate-500"
 										viewBox="0 0 16 16"
 									>
 										<path

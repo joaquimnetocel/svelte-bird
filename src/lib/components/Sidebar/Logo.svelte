@@ -25,7 +25,7 @@
 		{@render children()}
 	{:else}
 		<span
-			class="hidden text-xl font-bold text-gray-300 lg:text-2xl classSidebarExpanded:inline bold"
+			class="bold hidden text-xl font-bold text-gray-300 classSidebarExpanded:inline lg:text-2xl"
 		>
 			{propTitle ?? 'SVELTE-BIRD'}
 		</span>

@@ -38,19 +38,19 @@
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 				{@html propData.stringIcon ?? ''}
 				<div
-					class="ml-2 text-sm font-medium duration-200 lg:classSidebarExpanded:opacity-100 lg:opacity-0 2xl:opacity-100"
+					class="ml-2 text-sm font-medium duration-200 lg:opacity-0 lg:classSidebarExpanded:opacity-100 2xl:opacity-100"
 				>
 					{propData.stringText}
 				</div>
 			</div>
 			{#if propData.stringBadge !== undefined}
-				<div class="flex ml-2">
+				<div class="ml-2 flex">
 					<span
 						class:text-white={storeActiveMenu.value === propData.stringName}
 						class:bg-slate-800={storeActiveMenu.value === propData.stringName}
 						class:text-slate-700={storeActiveMenu.value !== propData.stringName}
 						class:bg-slate-100={storeActiveMenu.value !== propData.stringName}
-						class="inline-flex items-center justify-center h-5 px-2 text-xs font-medium rounded"
+						class="inline-flex h-5 items-center justify-center rounded px-2 text-xs font-medium"
 					>
 						{propData.stringBadge}
 					</span>

@@ -13,11 +13,11 @@
 	}
 </script>
 
-<div class="justify-end hidden pt-3 mt-auto lg:flex 2xl:hidden">
+<div class="mt-auto hidden justify-end pt-3 lg:flex 2xl:hidden">
 	<div class="px-3 py-2">
 		<button onclick={functionClick}>
 			<span class="sr-only">Expand / collapse sidebar</span><svg
-				class="w-6 h-6 fill-current classSidebarExpanded:rotate-180"
+				class="h-6 w-6 fill-current classSidebarExpanded:rotate-180"
 				viewBox="0 0 24 24"
 			>
 				<path

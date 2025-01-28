@@ -26,7 +26,7 @@
 <div use:functionClickOutside={() => (stateExpanded = false)} class="relative inline-flex">
 	<button
 		onclick={() => (stateExpanded = !stateExpanded)}
-		class="flex items-center justify-center w-8 h-8 rounded-full false bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600/80"
+		class="false flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600/80"
 	>
 		<span class="sr-only">{propTitle}</span>
 		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
@@ -41,7 +41,7 @@
 		<div
 			transition:slide
 			class:enter-done={stateExpanded}
-			class="w-80 sm:w-96 min-w-80 absolute right-0 top-full z-10 -mr-48 mt-1 origin-top-right overflow-hidden rounded border border-slate-200 bg-white py-1.5 shadow-lg dark:border-slate-700 dark:bg-slate-800 sm:mr-0"
+			class="absolute right-0 top-full z-10 -mr-48 mt-1 w-80 min-w-80 origin-top-right overflow-hidden rounded border border-slate-200 bg-white py-1.5 shadow-lg dark:border-slate-700 dark:bg-slate-800 sm:mr-0 sm:w-96"
 		>
 			<div>
 				<div

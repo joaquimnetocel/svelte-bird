@@ -11,10 +11,10 @@
 	});
 </script>
 
-<div class="w-full mx-auto max-w-9xl sm:px-6">
-	<div class="relative p-4 mb-8 overflow-hidden bg-indigo-200 rounded-sm dark:bg-indigo-500 sm:p-6">
+<div class="max-w-9xl mx-auto w-full sm:px-6">
+	<div class="relative mb-8 overflow-hidden rounded-sm bg-indigo-200 p-4 dark:bg-indigo-500 sm:p-6">
 		<div
-			class="absolute top-0 right-0 hidden mr-16 -mt-4 pointer-events-none xl:block"
+			class="pointer-events-none absolute right-0 top-0 -mt-4 mr-16 hidden xl:block"
 			aria-hidden="true"
 		>
 			<svg width="319" height="198" xmlns:xlink="http://www.w3.org/1999/xlink">

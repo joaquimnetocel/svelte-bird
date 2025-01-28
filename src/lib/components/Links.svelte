@@ -28,7 +28,7 @@
 <div use:functionClickOutside={() => (stateVisible = false)} class="relative inline-flex">
 	<button
 		onclick={() => (stateVisible = !stateVisible)}
-		class="flex items-center justify-center w-8 h-8 rounded-full false bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600/80"
+		class="false flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600/80"
 		aria-haspopup="true"
 		aria-expanded="false"
 	>
@@ -40,7 +40,7 @@
 	{#if stateVisible}
 		<div
 			transition:slide
-			class="min-w-44 absolute right-0 top-full z-10 mt-1 origin-top-right overflow-hidden rounded border border-slate-200 bg-white py-1.5 shadow-lg dark:border-slate-700 dark:bg-slate-800"
+			class="absolute right-0 top-full z-10 mt-1 min-w-44 origin-top-right overflow-hidden rounded border border-slate-200 bg-white py-1.5 shadow-lg dark:border-slate-700 dark:bg-slate-800"
 		>
 			<div>
 				<div
@@ -58,7 +58,7 @@
 								href="/"
 							>
 								<svg
-									class="w-3 h-3 mr-2 text-indigo-300 fill-current shrink-0 dark:text-indigo-500"
+									class="mr-2 h-3 w-3 shrink-0 fill-current text-indigo-300 dark:text-indigo-500"
 									viewBox="0 0 12 12"
 								>
 									<rect y="3" width="12" height="9" rx="1" />
@@ -73,7 +73,7 @@
 								href="/#0"
 							>
 								<svg
-									class="w-3 h-3 mr-2 text-indigo-300 fill-current shrink-0 dark:text-indigo-500"
+									class="mr-2 h-3 w-3 shrink-0 fill-current text-indigo-300 dark:text-indigo-500"
 									viewBox="0 0 12 12"
 								>
 									<path
@@ -88,7 +88,7 @@
 								class="flex items-center px-3 py-1 text-sm font-medium text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400"
 								href="/#0"
 								><svg
-									class="w-3 h-3 mr-2 text-indigo-300 fill-current shrink-0 dark:text-indigo-500"
+									class="mr-2 h-3 w-3 shrink-0 fill-current text-indigo-300 dark:text-indigo-500"
 									viewBox="0 0 12 12"
 								>
 									<path

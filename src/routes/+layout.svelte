@@ -7,6 +7,7 @@
 	//import 'svelte-bird/dist/css/svelte-bird.min.css';
 	import '../app.css';
 	// PRODUCTION
+	import { goto } from '$app/navigation';
 	import { arrayNotificationsData } from './data/arrayNotificationsData.js';
 	import { arraySidebarData } from './data/arraySidebarData.js';
 	import { arrayUserData } from './data/arrayUserData.js';
@@ -37,7 +38,7 @@
 		<!-- </div> -->
 	</div>
 	{#snippet snippetHeader()}
-		<div class="flex items-center space-x-3 ms-auto">
+		<div class="ms-auto flex items-center space-x-3">
 			<Search />
 			<Notifications
 				propData={arrayNotificationsData}
@@ -48,8 +49,9 @@
 			/>
 			<Links propTitle="CHOOSE YOUR LANGUAGE:" />
 			<DarkModeButton />
-			<hr class="w-px h-6 border-none bg-slate-200 dark:bg-slate-700" />
+			<hr class="h-6 w-px border-none bg-slate-200 dark:bg-slate-700" />
 			<User
+				onClick={() => goto('/')}
 				propUserMenuArray={arrayUserData}
 				propTitle="Joaquim"
 				propInternalTitle="Joaquim"
@@ -60,7 +62,7 @@
 		</div>
 	{/snippet}
 	{#snippet snippetFooter()}
-		<div class="flex items-center justify-between h-8">
+		<div class="flex h-8 items-center justify-between">
 			<div>All Rights Reserved ©</div>
 			<div>VERSION 0.0.19</div>
 		</div>
