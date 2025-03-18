@@ -14,7 +14,7 @@
 		onClick,
 		propImage,
 		propTitle = 'John Smith',
-		propInternalTitle = 'John Smith',
+		propInternalTitle,
 		propInternalSubtitle,
 		propUserMenuArray = [
 			{
@@ -77,15 +77,16 @@
 		>
 			<div>
 				<div class="mb-1 border-b border-slate-200 px-3 pb-2 pt-0.5 dark:border-slate-700">
+					{#if propInternalTitle !== undefined}
+						<div class="font-medium text-slate-800 dark:text-slate-100">{propInternalTitle}</div>
+					{/if}
+					{#if propInternalSubtitle !== undefined}
+						<div class="text-xs italic text-slate-500 dark:text-slate-400">
+							{propInternalSubtitle}
+						</div>
+					{/if}
 					{#if children}
 						{@render children()}
-					{:else}
-						<div class="font-medium text-slate-800 dark:text-slate-100">{propInternalTitle}</div>
-						{#if propInternalSubtitle !== undefined}
-							<div class="text-xs italic text-slate-500 dark:text-slate-400">
-								{propInternalSubtitle}
-							</div>
-						{/if}
 					{/if}
 				</div>
 				<ul>
