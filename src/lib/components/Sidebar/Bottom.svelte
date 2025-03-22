@@ -17,7 +17,8 @@
 	<div class="px-3 py-2">
 		<button onclick={functionClick}>
 			<span class="sr-only">Expand / collapse sidebar</span><svg
-				class="h-6 w-6 fill-current classSidebarExpanded:rotate-180"
+				class="h-6 w-6 fill-current"
+				class:rotate-180={propSidebarExpanded}
 				viewBox="0 0 24 24"
 			>
 				<path

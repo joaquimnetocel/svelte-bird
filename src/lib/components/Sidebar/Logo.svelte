@@ -5,12 +5,14 @@
 	import type { Snippet } from 'svelte';
 
 	let {
+		propSidebarExpanded,
 		children,
 		propLogo,
 		propWidth,
 		propTitle,
 		propHref,
 	}: {
+		propSidebarExpanded: boolean;
 		children?: Snippet;
 		propLogo?: string;
 		propWidth?: number;
@@ -25,7 +27,9 @@
 		{@render children()}
 	{:else}
 		<span
-			class="bold hidden text-xl font-bold text-gray-300 classSidebarExpanded:inline lg:text-2xl"
+			class="bold text-xl font-bold text-gray-300 lg:text-2xl"
+			class:inline={propSidebarExpanded}
+			class:hidden={!propSidebarExpanded}
 		>
 			{propTitle ?? 'SVELTE-BIRD'}
 		</span>

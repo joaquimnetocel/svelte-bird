@@ -55,7 +55,6 @@
 >
 	<div
 		id="idBody"
-		class:classSidebarExpanded={stateSidebarExpanded}
 		class="font-inter bg-slate-100 text-slate-600 antialiased dark:bg-slate-900 dark:text-slate-400"
 	>
 		<div class="flex h-screen overflow-hidden">

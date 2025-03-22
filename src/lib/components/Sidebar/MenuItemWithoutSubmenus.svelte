@@ -6,7 +6,9 @@
 
 	let {
 		propData,
+		propSidebarExpanded,
 	}: {
+		propSidebarExpanded: boolean;
 		propData: typeMenuWithoutSubmenus<string>;
 	} = $props();
 
@@ -38,7 +40,9 @@
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 				{@html propData.stringIcon ?? ''}
 				<div
-					class="ml-2 text-sm font-medium duration-200 lg:opacity-0 lg:classSidebarExpanded:opacity-100 2xl:opacity-100"
+					class="ml-2 text-sm font-medium duration-200 2xl:opacity-100"
+					class:lg:opacity-100={propSidebarExpanded}
+					class:lg:opacity-0={!propSidebarExpanded}
 				>
 					{propData.stringText}
 				</div>

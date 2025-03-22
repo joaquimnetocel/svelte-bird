@@ -44,10 +44,12 @@
 		class:-translate-x-64={!storeMobileMenu.value}
 		class:classContractedScrollWidth={!propSidebarExpanded}
 		class:classExpandedScrollWidth={propSidebarExpanded}
-		class="absolute left-0 top-0 z-40 flex h-screen w-64 shrink-0 -translate-x-64 flex-col overflow-y-auto overflow-x-hidden bg-colorDark p-4 transition-all duration-200 ease-in-out lg:static lg:left-auto lg:top-auto lg:w-20 lg:translate-x-0 lg:classSidebarExpanded:!w-64 2xl:!w-64"
+		class:lg:!w-64={propSidebarExpanded}
+		class="absolute left-0 top-0 z-40 flex h-screen w-64 shrink-0 -translate-x-64 flex-col overflow-y-auto overflow-x-hidden bg-colorDark p-4 transition-all duration-200 ease-in-out lg:static lg:left-auto lg:top-auto lg:w-20 lg:translate-x-0 2xl:!w-64"
 	>
 		<div class="mb-10 flex justify-between pr-3 sm:px-2">
 			<Logo
+				{propSidebarExpanded}
 				propLogo={propLogoImage}
 				propWidth={propLogoWidth}
 				{propTitle}
@@ -61,10 +63,16 @@
 					{#if currentSection.stringSection !== undefined}
 						<h3 class="pl-3 text-xs font-semibold uppercase text-slate-500">
 							<span
-								class="hidden w-6 text-center lg:block lg:classSidebarExpanded:hidden 2xl:hidden"
+								class="hidden w-6 text-center"
+								class:lg:hidden={propSidebarExpanded}
+								class:lg:block={!propSidebarExpanded}
 								aria-hidden="true">•••</span
 							>
-							<span class="text-slate-400 lg:hidden lg:classSidebarExpanded:block 2xl:block">
+							<span
+								class="text-slate-400 2xl:block"
+								class:lg:hidden={!propSidebarExpanded}
+								class:lg:block={propSidebarExpanded}
+							>
 								{currentSection.stringSection}
 							</span>
 						</h3>
@@ -72,7 +80,7 @@
 					<ul class="mt-3">
 						{#each currentSection.arrayMenus as currentMenu}
 							{#if 'stringHref' in currentMenu}
-								<MenuItemWithoutSubmenus propData={currentMenu} />
+								<MenuItemWithoutSubmenus {propSidebarExpanded} propData={currentMenu} />
 							{:else}
 								<MenuItemWithSubmenus
 									propData={currentMenu}

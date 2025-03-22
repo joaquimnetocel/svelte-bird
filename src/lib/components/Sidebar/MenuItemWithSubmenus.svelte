@@ -43,7 +43,10 @@
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 				{@html propData.stringIcon ?? ''}
 				<span
-					class="ml-3 text-sm font-medium duration-200 classSidebarExpanded:whitespace-normal lg:opacity-0 lg:classSidebarExpanded:opacity-100 2xl:opacity-100"
+					class="ml-3 text-sm font-medium duration-200 2xl:opacity-100"
+					class:lg:opacity-100={propSidebarExpanded}
+					class:lg:opacity-0={!propSidebarExpanded}
+					class:whitespace-normal={propSidebarExpanded}
 				>
 					{propData.stringText}
 				</span>
@@ -60,7 +63,12 @@
 		</div>
 	</button>
 	{#if stateExpanded}
-		<div transition:slide class="lg:hidden lg:classSidebarExpanded:block 2xl:block">
+		<div
+			transition:slide
+			class="2xl:block"
+			class:lg:block={propSidebarExpanded}
+			class:lg:hidden={!propSidebarExpanded}
+		>
 			<ul class="mt-1 pl-7">
 				{#each propData.arraySubmenus as currentSubmenu}
 					<li class="mb-1 last:mb-0">
@@ -81,7 +89,9 @@
 							target={currentSubmenu.stringTarget}
 						>
 							<div
-								class="flex items-center justify-between whitespace-normal py-1 text-sm font-medium duration-200 lg:opacity-0 lg:classSidebarExpanded:opacity-100 2xl:opacity-100"
+								class="flex items-center justify-between whitespace-normal py-1 text-sm font-medium duration-200 lg:opacity-0 2xl:opacity-100"
+								class:lg:opacity-100={propSidebarExpanded}
+								class:lg:opacity-0={!propSidebarExpanded}
 							>
 								{currentSubmenu.stringText}
 								{#if currentSubmenu.stringBadge !== undefined}

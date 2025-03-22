@@ -1,7 +1,4 @@
 import type { Config } from 'tailwindcss';
-// ADDED BY ME:
-import plugin from 'tailwindcss/plugin';
-/////
 
 export default {
 	content: [
@@ -29,12 +26,4 @@ export default {
 			/////
 		},
 	},
-
-	plugins: [
-		// ADDED BY ME:
-		plugin(({ addVariant }) => {
-			addVariant('classSidebarExpanded', `:merge(.classSidebarExpanded) &`);
-		}),
-		/////
-	],
 } as Config;
